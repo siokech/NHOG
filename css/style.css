@@ -715,7 +715,7 @@ h1.single{
 	color: #fff;
 	font-family: 'BebasNeue';
 	font-weight: 700;
-	font-size: 100%;
+	font-size: 70px;
 	line-height: 70px;
 	border-radius: 4px;
 	background: #008bc4;
@@ -1902,7 +1902,7 @@ a.btn.blue,
     }
 	}
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 768px) {
 
 	body {
 		min-width: 320px;
@@ -1969,10 +1969,11 @@ a.btn.blue,
 		font-size: 30px;
 		line-height: 40px;
 		padding-bottom: 30px;
+
 	}
 	
 	.slider .info h2 span {
-		font-size: 40px;
+		font-size: 80%;
 		line-height: 30px;
 		padding-top: 10px;
 		padding-bottom: 1px;
@@ -2090,6 +2091,10 @@ a.btn.blue,
     }
     .testimonial {
         width: 100%;
+    }
+
+    .walls{
+    	font-size: 10px;
     }
 }
 		
