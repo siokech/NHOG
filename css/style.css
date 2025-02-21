@@ -716,7 +716,7 @@ h1.single{
 	font-family: 'BebasNeue';
 	font-weight: 700;
 	font-size: 100%;
-	line-height: 101px;
+	line-height: 70px;
 	border-radius: 4px;
 	background: #008bc4;
 	padding: 1px 23px 5px 23px;
@@ -1967,14 +1967,15 @@ a.btn.blue,
 	
 	.slider .info h2 {
 		font-size: 30px;
-		line-height: 50px;
+		line-height: 40px;
 		padding-bottom: 30px;
 	}
 	
 	.slider .info h2 span {
-		font-size: 60%;
-		line-height: 1;
-		padding: 5px 5px;
+		font-size: 40px;
+		line-height: 30px;
+		padding-top: 10px;
+		padding-bottom: 1px;
 	}
 	
 
