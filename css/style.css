@@ -523,7 +523,7 @@ h1.single{
 /*Review*/
 
 .polygon{
-    background:#7e8798;
+    background:#fff;
     color:#fff;
     display:inline-block;
     padding:.2rem 2rem;
@@ -715,7 +715,7 @@ h1.single{
 	color: #fff;
 	font-family: 'BebasNeue';
 	font-weight: 700;
-	font-size: 84px;
+	font-size: 100%;
 	line-height: 101px;
 	border-radius: 4px;
 	background: #008bc4;
@@ -1908,6 +1908,7 @@ a.btn.blue,
 		min-width: 320px;
 	}
 
+
 	#header {
 		padding-bottom: 0;
 		margin-bottom: -20px;
@@ -1965,16 +1966,17 @@ a.btn.blue,
 	}
 	
 	.slider .info h2 {
-		font-size: 40px;
+		font-size: 30px;
 		line-height: 50px;
 		padding-bottom: 30px;
 	}
 	
 	.slider .info h2 span {
-		font-size: 40px;
-		line-height: 50px;
-		padding: 0 15px;
+		font-size: 60%;
+		line-height: 1;
+		padding: 5px 5px;
 	}
+	
 
 	.mac .slider .info h2 span {
 		line-height: 50px;
