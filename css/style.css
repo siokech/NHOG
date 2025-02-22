@@ -2299,19 +2299,23 @@ margin:1rem;
 
 
 .event-day {
-    background-color: blue !important;
+    background-color: #243452 !important;
     color: white;
     position: relative;
+    cursor: pointer;
+}
+.event-day:hover {
+    background-color: #4a6ba9 !important;
+    
 }
 
 .event-tooltip {
+    background-color: #243452; /* Background color for the tooltip */
+    color: white !important; /* Ensure text is white */
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 20px;
     position: absolute;
-    bottom: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    background: black;
-    color: white;
-    padding: 5px;
-    border-radius: 3px;
+    z-index: 10;
     white-space: nowrap;
 }
