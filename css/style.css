@@ -632,7 +632,7 @@ h1.single{
 
 #sidebar .calendar .note p:after {
 	position: absolute;
-	background: #008bc4;
+	background: #243452;
 	content: "";
 	height: 22px;
 	width: 22px;
@@ -1967,10 +1967,13 @@ a.btn.blue,
 	}
 	
 	.slider .info h2 {
-		font-size: 30px;
+		font-size: 40px;
 		line-height: 40px;
 		padding-bottom: 30px;
 
+	}
+	.walls1{
+		font-size: 70px;
 	}
 	
 	.slider .info h2 span {
