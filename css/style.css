@@ -791,6 +791,20 @@ h1.single{
 	background-position: -12px 0;
 }
 
+/*belief section*/
+
+.belief {
+    background-color: #0A2A5E; /* Dark Blue */
+    border-radius: 10px; /* Smooth rounded edges */
+    box-shadow: 5px 5px 15px rgba(128, 128, 128, 0.5); /* Grey shadow */
+    padding: 7px; /* Add some space inside */
+    color: white; /* Make text readable */
+    display: flex; /* Align items nicely */
+    align-items: center; /* Center content vertically */
+    gap: 15px; /* Space between elements */
+    margin-right: 2%;
+}
+
 /* posts
 ------------------------------------------------------------------------------*/
 
@@ -1972,9 +1986,7 @@ a.btn.blue,
 		padding-bottom: 30px;
 
 	}
-	.walls1{
-		font-size: 70px;
-	}
+
 	
 	.slider .info h2 span {
 		font-size: 80%;
