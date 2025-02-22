@@ -203,8 +203,8 @@ a:hover {
 }
 
 #logo {
-	width: 134px;
-	height: 134px;
+	width: 150px;
+	height: 145px;
 	display: block;
 	cursor: pointer;
 	margin: 0 auto -82px;
@@ -1737,7 +1737,8 @@ a.btn.blue,
 	
 	#logo {
 		background-image: url(../images/logo.png);
-		background-size: 134px 134px;
+		background-size: 300px 270px;
+
 	}
 
 	.slider .info a {
@@ -1977,6 +1978,7 @@ a.btn.blue,
 		line-height: 30px;
 		padding-top: 10px;
 		padding-bottom: 1px;
+		
 	}
 	
 
@@ -2146,7 +2148,8 @@ a.btn.blue,
 	
 		#logo {
 			background-image: url(../images/logo.png);
-			background-size: 100px 100px;
+			background-size: 98px 94px;
+			margin: 0 auto 8px;
 		}
 	}
 }
@@ -2156,8 +2159,7 @@ a.btn.blue,
 		padding-bottom: 30px;
 	}
 
-}
-
+}5
 
 .section__container {
   width: 100%;
