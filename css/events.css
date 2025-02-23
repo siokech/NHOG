@@ -31,7 +31,10 @@
     float: none;
 }
 
-
+/* Events section*/
+.content{
+    position: relative;
+}
 
 
 .btn-primary{
