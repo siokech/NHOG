@@ -27,28 +27,30 @@ $(document).ready(function() {
         return false;
     });
 
-    // 📅 Events Data (Mapping Events to Dates)
     const events = {
         "2025-02-24": "Schorlarship Program",
         "2025-02-25": "Schorlarship Program",
         "2025-03-11": "Mission Team from the UK",
         "2025-03-12": "Mission Team from the UK",
-          "2025-03-13": "Mission Team from the UK",
-           "2025-03-14": "Mission Team from the UK",
-            "2025-03-15": "Mission Team from the UK",
+        "2025-03-13": "Mission Team from the UK",
+        "2025-03-14": "Mission Team from the UK",
+        "2025-03-15": "Mission Team from the UK",
         "2025-07-04": "Independence Day Celebration",
         "2025-12-25": "Christmas Gathering"
     };
 
     let today = new Date();
-    let currentMonth = today.getMonth(); // Dynamically get current month
-    let currentYear = today.getFullYear(); // Dynamically get current year
+    let currentMonth = today.getMonth();
+    let currentYear = today.getFullYear();
     const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
     function updateCalendar() {
         $("#calendar-title").text(`${monthNames[currentMonth]} ${currentYear}`);
+          
 
         let firstDay = new Date(currentYear, currentMonth, 1).getDay();
+        firstDay = firstDay === 0 ? 7 : firstDay; 
+
         let lastDate = new Date(currentYear, currentMonth + 1, 0).getDate();
         let prevLastDate = new Date(currentYear, currentMonth, 0).getDate();
 
@@ -104,7 +106,6 @@ $(document).ready(function() {
 
         $(".table table").html(calendarHTML);
 
-        // 🖱️ Add Hover Effect for Events
         $(".event-day").hover(function() {
             let eventName = $(this).attr("data-event");
             if (eventName) {
@@ -135,5 +136,5 @@ $(document).ready(function() {
         updateCalendar();
     });
 
-    updateCalendar(); // Initial Render with current date
+    updateCalendar();
 });
