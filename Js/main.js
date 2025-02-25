@@ -1,6 +1,15 @@
 $(document).ready(function() {
-    $('.bxslider').bxSlider();
-    
+    // Initialize bxSlider with horizontal transition
+    $('.bxslider').bxSlider({
+        mode: 'horizontal',  // Slide images from right to left
+        auto: true,          // Enable auto sliding
+        speed: 800,          // Transition speed in milliseconds
+        pause: 5000,         // Time between slides (5 seconds)
+        controls: false,     // Hide navigation arrows
+        pager: true,         // Show dots navigation
+        adaptiveHeight: true // Adjust height based on content
+    });
+
     $(".menu-trigger").click(function() {
         $("#menu").fadeToggle(300);
         $(this).toggleClass("active");
@@ -8,7 +17,7 @@ $(document).ready(function() {
 
     $('.info-request, .get-contact').fancybox();
     $("select").crfs(); 
-    
+
     $(".table td").mouseenter(function(){    
         $(this).find(".holder").stop(true, true).fadeIn(600);
         $(this).find(">div").addClass('hover');
@@ -28,8 +37,8 @@ $(document).ready(function() {
     });
 
     const events = {
-        "2025-02-24": "Schorlarship Program",
-        "2025-02-25": "Schorlarship Program",
+        "2025-02-24": "Scholarship Program",
+        "2025-02-25": "Scholarship Program",
         "2025-03-11": "Mission Team from the UK",
         "2025-03-12": "Mission Team from the UK",
         "2025-03-13": "Mission Team from the UK",
@@ -46,7 +55,6 @@ $(document).ready(function() {
 
     function updateCalendar() {
         $("#calendar-title").text(`${monthNames[currentMonth]} ${currentYear}`);
-          
 
         let firstDay = new Date(currentYear, currentMonth, 1).getDay();
         firstDay = firstDay === 0 ? 7 : firstDay; 
@@ -137,4 +145,27 @@ $(document).ready(function() {
     });
 
     updateCalendar();
+});
+
+// Belief section animation (unchanged)
+document.addEventListener("DOMContentLoaded", function () {
+    const beliefs = document.querySelectorAll(".belief");
+
+    function checkScroll() {
+        const triggerPoint = window.innerHeight * 0.85;
+
+        beliefs.forEach((belief) => {
+            const beliefTop = belief.getBoundingClientRect().top;
+            const beliefBottom = belief.getBoundingClientRect().bottom;
+
+            if (beliefTop < triggerPoint && beliefBottom > 0) {
+                belief.classList.add("show");
+            } else {
+                belief.classList.remove("show"); // Reset when out of view
+            }
+        });
+    }
+
+    window.addEventListener("scroll", checkScroll);
+    checkScroll(); // Run on page load in case already in view
 });
