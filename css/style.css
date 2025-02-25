@@ -172,6 +172,80 @@ a, a:visited, a:focus, a:active {
 a:hover {
 	text-decoration: underline;
 }
+
+
+/* Contact Bar Section Starts
+------------------------------------------------------------------------------*/
+
+/* Top Bar Styles */
+#top-bar {
+    background-color: #f7f7f7; /* Light grey but distinct from white */
+    padding: 8px 0;
+    font-size: 14px;
+    color: #333;
+    border-bottom: 1px solid #ddd;
+}
+
+#top-bar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.top-left {
+    flex: 1;
+}
+
+.top-right {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.contact-info {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-weight: 500;
+}
+
+.contact-info i {
+    color: #8a5aa5; /* Red icon to match NHOG theme */
+}
+
+/* Donate Button */
+.donate-button {
+    background-color: #8a5aa5;
+    color: white;
+    padding: 8px 27px;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: 0.3s;
+    display: inline-block;
+
+}
+
+a {
+    text-decoration: none; /* Removes underline by default */
+    color: white;
+}
+
+a:hover {
+    text-decoration: none; /* Ensures no underline on hover */
+}
+
+.donate-button:hover {
+    background-color: #303956;
+
+
+}
+
+
+/* Contact Bar Section Ends */
+
+
 /* Content for Mission, Vision, and Belief
 ------------------------------------------------------------------------------*/
 
@@ -685,12 +759,30 @@ h1.single{
 	height: 600px;
 }
 .slider .bxslider .cover2 {
-	background: url(../images/missioners1.jpg) no-repeat 50% 50%;
+	background: url(../images/service1.jpg) no-repeat 50% 50%;
 	background-size: cover;
 	height: 600px;
 }
 .slider .bxslider .cover3 {
-	background: url(../images/missioners2.jpg) no-repeat 50% 50%;
+	background: url(../images/service2.jpg) no-repeat 50% 50%;
+	background-size: cover;
+	height: 600px;
+}
+
+.slider .bxslider .cover4 {
+	background: url(../images/service7.jpg) no-repeat 50% 50%;
+	background-size: cover;
+	height: 600px;
+}
+
+.slider .bxslider .cover5 {
+	background: url(../images/service3.jpg) no-repeat 50% 50%;
+	background-size: cover;
+	height: 600px;
+}
+
+.slider .bxslider .cover6 {
+	background: url(../images/service5.jpg) no-repeat 50% 50%;
 	background-size: cover;
 	height: 600px;
 }
@@ -795,7 +887,36 @@ h1.single{
     align-items: center; /* Center content vertically */
     gap: 15px; /* Space between elements */
     margin-right: 2%;
+    opacity: 0; /* Initially hidden */
+    transition: transform 1.5s ease-out, opacity 1.5s ease-out;
 }
+
+/* First element slides in from the left */
+.belief:first-child {
+    transform: translateX(-100%);
+}
+
+/* Last element slides in from the right */
+.belief:last-child {
+    transform: translateX(100%);
+}
+
+/* Middle element fades in or scales in */
+.belief:nth-child(2) {
+    transform: scale(0.5); /* Starts smaller */
+}
+
+/* When in view, all elements move to center */
+.belief.show {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Middle element smoothly grows to full size */
+.belief:nth-child(2).show {
+    transform: scale(1);
+}
+
 
 /* posts
 ------------------------------------------------------------------------------*/
