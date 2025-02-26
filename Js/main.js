@@ -169,3 +169,66 @@ document.addEventListener("DOMContentLoaded", function () {
     window.addEventListener("scroll", checkScroll);
     checkScroll(); // Run on page load in case already in view
 });
+
+
+/*Js for top-bar*/
+document.addEventListener("DOMContentLoaded", function () {
+    const topBar = document.getElementById("top-bar");
+    const header = document.getElementById("header");
+    const topBarPlaceholder = document.getElementById("top-bar-placeholder");
+
+    window.addEventListener("scroll", function () {
+        if (window.scrollY > 100) { 
+            topBar.style.transform = "translateY(-100%)"; 
+            header.style.top = "0"; 
+            topBarPlaceholder.style.display = "none"; // Hide placeholder when scrolling down
+        } else if (window.scrollY === 0) { 
+            topBar.style.transform = "translateY(0)"; 
+            header.style.top = "50px"; 
+            topBarPlaceholder.style.display = "block"; // Show placeholder when scrolling up
+        }
+    });
+});
+
+/*Js for top-bar ends*/
+
+/*Js for splitting text h2*/
+document.addEventListener("DOMContentLoaded", function () {
+    const title = document.querySelector(".animated-title");
+
+    const observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    title.classList.add("visible");
+                } else {
+                    title.classList.remove("visible"); // Reset when out of view
+                }
+            });
+        },
+        { threshold: 0.5 } // Triggers when 50% of the element is visible
+    );
+
+    observer.observe(title);
+});
+
+/*Js for splitting text h2 ends*/
+
+document.addEventListener("DOMContentLoaded", function () {
+    const sermonTitle = document.querySelector(".animated-title2");
+
+    const observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    sermonTitle.classList.add("reveal");
+                } else {
+                    sermonTitle.classList.remove("reveal"); // Reset when out of view
+                }
+            });
+        },
+        { threshold: 0.5 } // Triggers when 50% of the text is visible
+    );
+
+    observer.observe(sermonTitle);
+});
