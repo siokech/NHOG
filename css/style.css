@@ -294,6 +294,15 @@ a:hover {
 
 }
 
+
+
+
+/* Create space to prevent height collapse */
+#top-bar-placeholder {
+    height: 120px; /* Same as the top bar height */
+    width: 100%;
+}
+
 #logo {
 	width: 150px;
 	height: 145px;
