@@ -190,6 +190,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
+
 /*Js for top-bar ends*/
 
 /*Js for splitting text h2*/
