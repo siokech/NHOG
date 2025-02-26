@@ -178,12 +178,23 @@ a:hover {
 ------------------------------------------------------------------------------*/
 
 /* Top Bar Styles */
+#top-bar-placeholder {
+    height: 10px; /* Same as the top bar height */
+    width: 100%;
+}
+
 #top-bar {
-    background-color: #f7f7f7; /* Light grey but distinct from white */
+    background-color: #f7f7f7;
     padding: 8px 0;
     font-size: 14px;
     color: #333;
     border-bottom: 1px solid #ddd;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    transition: transform 0.3s ease-in-out; /* Use transform for smoother effect */
+    z-index: 1001;
 }
 
 #top-bar .container {
@@ -271,9 +282,16 @@ a:hover {
 ------------------------------------------------------------------------------*/
 
 #header {
-	padding: 8px 0 20px 0;
-	z-index: 99;
-	position: relative;
+	padding: 10px 0 20px 0;
+    position: fixed;
+    top: 50px; /* Initially below the top bar */
+    left: 0;
+    width: 100%;
+    border-bottom: 3px solid #ddd;
+    z-index: 1000;
+    transition: top 0.3s ease-in-out;
+    background-color: #8a5aa5; /* Ensure background remains solid */
+
 }
 
 #logo {
@@ -285,7 +303,8 @@ a:hover {
 	text-indent: -9999em;
 	background: url(../images/logo.png) no-repeat;
 	position: relative;
-	z-index: 3;
+	z-index: 4;
+
 }
 
 
@@ -602,6 +621,7 @@ h1.single{
     display:inline-block;
     padding:.2rem 2rem;
     clip-path:polygon(100% 0,93% 50%,100% 99%,0% 100%, 7% 50%, 0% 0%);
+    margin-top: 5%;
 }
 
 
@@ -750,7 +770,7 @@ h1.single{
 	height: 600px;
 	position: relative;
 	overflow: hidden;
-	margin-bottom: 94px;
+	margin-bottom: 9px;
 }
 
 .slider .bxslider .cover1 {
@@ -959,6 +979,7 @@ h1.single{
 	overflow: hidden;
 	background: #2c4167;
 	padding: 57px 0 70px 0;
+	margin-bottom: 0 !important;
 }
 
 h1,
@@ -980,6 +1001,50 @@ h1 {
 .news h2 {
 	color: #fff;
 }
+.animated-title {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    font-size: 2rem;
+    opacity: 0; /* Initially hidden */
+}
+
+.animated-title span {
+    display: inline-block;
+    transform: translateX(0);
+    transition: transform 0.6s ease-out, opacity 0.6s ease-out;
+    opacity: 0;
+}
+
+.animated-title span.left {
+    transform: translateX(-100px); /* Move from left */
+}
+
+.animated-title span.right {
+    transform: translateX(100px); /* Move from right */
+}
+
+.animated-title.visible {
+    opacity: 1;
+}
+
+.animated-title.visible span {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.animated-title2 {
+    opacity: 0;
+    transform: scale(0.5); /* Starts smaller */
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.animated-title2.reveal {
+    opacity: 1;
+    transform: scale(1); /* Expands smoothly */
+}
+
 
 .news article {
 	width: 50%;
@@ -991,12 +1056,25 @@ h1 {
 	float: left;
 	margin-right: 25px;
 	margin-top: 4px;
+	width: 45%;
+	height: 13rem;
+	
 }
 
 .news .pic img {
 	border-radius: 5px;
+	width: 100%;
+	height: 100%;
 }
 
+.pics img {
+    width: 100%; /* Maintains the original width */
+    transition: transform 0.3s ease-in-out; /* Smooth transition */
+}
+
+.pics:hover img {
+    transform: scale(1.1); /* Slightly enlarges the image on hover */
+}
 .news .info {
 	overflow: hidden;
 	color: #fff;
@@ -2207,6 +2285,7 @@ a.btn.blue,
     gap: 20px;
     padding: 50px 0;
     background: #f9f9f9;
+
 }
 
 .testimonial {
@@ -2320,7 +2399,14 @@ a.btn.blue,
   margin: auto;
   padding: 1rem;
   text-align: center;
+
 }
+
+.section__container {
+    margin-top: 0 !important;
+
+}
+
 
 .header {
   margin-bottom: 2rem;
@@ -2510,3 +2596,10 @@ margin:1rem;
     font-size: 1.5rem;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
 }
+
+
+
+.news {
+    margin-bottom: 0 !important;
+}
+
