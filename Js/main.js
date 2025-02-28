@@ -233,3 +233,67 @@ document.addEventListener("DOMContentLoaded", function () {
 
     observer.observe(sermonTitle);
 });
+
+
+/*Javascript - causes the section to expan*/
+
+document.addEventListener("DOMContentLoaded", function () {
+    const elementsToObserve = document.querySelectorAll(".request, .contents, .particles");
+
+    const observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("expand");
+                } else {
+                    entry.target.classList.remove("expand"); // Remove if you want it to shrink again
+                }
+            });
+        },
+        { threshold: 0.5 } // Trigger when 50% of the element is visible
+    );
+
+    elementsToObserve.forEach((element) => {
+        if (element) {
+            observer.observe(element);
+        } else {
+            console.error("Element not found");
+        }
+    });
+});
+
+/*Causes the button to shake every 20 seconds */
+document.addEventListener("DOMContentLoaded", function () {
+    const donateButton = document.querySelector(".donate-button");
+
+    function shakeButton() {
+        donateButton.classList.add("shake");
+
+        // Remove the class after the animation to allow restarting
+        setTimeout(() => {
+            donateButton.classList.remove("shake");
+        }, 600); // Matches animation duration (0.6s)
+    }
+
+    // Run shake every 20 seconds
+    setInterval(shakeButton, 20000);
+});
+
+
+setTimeout(() => {
+        document.getElementById("bookPopup").style.right = "5px";
+    }, 5000);
+
+    // Function to close the pop-up
+    function closePopup() {
+        document.getElementById("bookPopup").style.right = "-300px"; // Slide out
+        setTimeout(() => {
+            document.getElementById("nuggingIcon").style.display = "flex"; // Show the nugging icon
+        }, 500);
+    }
+
+    // Function to open the pop-up again
+    function openPopup() {
+        document.getElementById("bookPopup").style.right = "20px"; // Slide in
+        document.getElementById("nuggingIcon").style.display = "none"; // Hide nugging icon
+    }
