@@ -26,12 +26,12 @@
 
 </head>
 <body>
-	
+
 <div id="top-bar-placeholder"></div>
 
 <!-- Top Contact Bar -->
-<div id="top-bar">
-    <div class="container" >
+<div id="top-bar" class="top-bar">
+    <div class="container contents" >
         <div class="top-left">
             <a href="giving.html" class="donate-button" style="color:white;">Donate</a>
         </div>
@@ -208,10 +208,10 @@
 <div class="particles-container">
 
 <div id="particles-js"></div>
-<div class="contents">
+<div class="contents particles">
 
 
-<h2 class="text-center" style="padding-top:3rem;padding-bottom: 1rem;"><span class="polygon">Church Events</span></h2>
+<h2 class="text-center" style="padding-bottom: 1rem;"><span class="polygon">Church Events</span></h2>
 
 <div class="content">
 		<div class="container">
@@ -222,7 +222,7 @@
 
 	<!-- Events section begins !-->	
 
-<section class="posts-con eventss">			
+<section class="posts-con eventss" style="margin-bottom: -3rem;">			
 
 <div class="wrapper">
 
@@ -326,7 +326,16 @@
 					
 					
 				</section>
+				 
+ <!--<img src="images/diaspora.jpeg" alt="Description of image" width="300" 
+     style="border-radius:.3rem; height:23rem;  margin-bottom: 5.5rem; margin-left:5%;">
 
+				
+
+ <video width="300" height="300" controls poster="images/shepherd.jpeg" style="margin-left:4%;">
+  <source src="images/shepherd-g.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video> -->
 			<!-- Events section ends !-->
 			</div>
 <!-- Calendar Section Begins !-->
@@ -433,10 +442,19 @@
 <!-- particles end!-->
 
 
+<section class="church-fliers">
+    <h2 style="padding-bottom:4px; margin-top:2px;font-size:3rem;">Banners</h2>
+    <div class="fliers-container">
+        <img src="images/slogan.jpg" alt="Birthday Celebration Flier">
+        <img src="images/diaspora.jpeg" alt="Diaspora Event Flier">
+        <img src="images/shepherd.jpeg" alt="Shepherd Event Flier">
+    </div>
+</section>
+
 
 	<!-- Request for more information start !-->
 
-		<div class="container">
+		<div class="container request" style="margin-top:1rem;">
 		<a href="#fancy" class="info-request">
 			<span class="holder">
 				<span class="title">Request information</span>
@@ -604,8 +622,20 @@
 		</form>
 	</div>
 
+<!-- Book Promotion Pop-up -->
+<div class="book-popup" id="bookPopup">
+    <div class="popup-content">
+        <span class="close-btn" onclick="closePopup()">X</span>
+        <img src="images/book-ken.png" alt="When the Devil is a Church Member">
+        <p>Discover the powerful book <strong>"When the Devil is a Church Member"</strong> by Apostle Dr. Ken.</p>
+        <a href="book.html" class="buy-btn" target="_blank" style="color:white;">Explore & Buy</a>
+    </div>
+</div>
 
-
+<!-- Nugging Image (Appears After Dismissal) -->
+<div class="nugging-icon" id="nuggingIcon" onclick="openPopup()">
+    <img src="images/book-ken.png" alt="Book">
+</div>
 
 
 	
