@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Church Ministries</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            max-width: 1000px;
+            margin: auto;
+        }
+        .ministry {
+            position: relative;
+            width: 100%;
+            height: 250px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: opacity 1.5s ease-in-out;
+        }
+        .ministry h3 {
+            position: absolute;
+            bottom: 10px;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.6);
+            color: white;
+            padding: 10px;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Our Church Ministries</h1>
+    <div class="container">
+        <div id="men-ministry" class="ministry"><h3>Men's Ministry</h3></div>
+        <div id="women-ministry" class="ministry"><h3>Women's Ministry</h3></div>
+        <div id="deborah-ministry" class="ministry"><h3>Deborah Ministry - Charity</h3></div>
+        <div id="children-ministry" class="ministry"><h3>Children's Ministry</h3></div>
+        <div id="praise-ministry" class="ministry"><h3>Praise and Worship Ministry</h3></div>
+        <div id="ushering-ministry" class="ministry"><h3>Ushering & Hospitality</h3></div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const ministries = {
+              "men-ministry": ["../images/Deborah1.JPG", "../images/Deborah2.JPG", "../images/Deborah3.JPG"],
+                "women-ministry": ["../images/Deborah5.JPG", "../images/Deborah7.JPG", "../images/Deborah6.JPG"],
+                "deborah-ministry": ["../images/Deborah4.JPG", "../images/Deborah5.JPG", "../images/Deborah6.JPG"],
+                "children-ministry": ["../images/Deborah7.JPG", "../images/Deborah8.JPG", "../images/Deborah9.JPG"],
+                "praise-ministry": ["../images/Deborah10.JPG", "../images/Deborah11.JPG", "../images/Deborah12.JPG"],
+                "ushering-ministry": ["../images/Deborah2.JPG", "../images/Deborah4.JPG", "../images/Deborah6.JPG"]
+            };
+
+            function startSlideshow(id, images, delay) {
+                let index = 0;
+                const element = document.getElementById(id);
+                if (!element) return;
+                element.style.backgroundImage = `url('${images[index]}')`;
+                index++;
+
+                setInterval(() => {
+                    element.style.opacity = "0";
+                    setTimeout(() => {
+                        element.style.backgroundImage = `url('${images[index]}')`;
+                        element.style.opacity = "1";
+                        index = (index + 1) % images.length;
+                    }, 1500);
+                }, delay);
+            }
+
+            let baseDelay = 30000; // 30 seconds
+            let staggerDelay = 5000; // Each ministry changes at different times
+            let count = 0;
+            for (const id in ministries) {
+                startSlideshow(id, ministries[id], baseDelay + (count * staggerDelay));
+                count++;
+            }
+        });
+    </script>
+</body>
+</html>
+
+    
