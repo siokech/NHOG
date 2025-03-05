@@ -297,3 +297,23 @@ setTimeout(() => {
         document.getElementById("bookPopup").style.right = "20px"; // Slide in
         document.getElementById("nuggingIcon").style.display = "none"; // Hide nugging icon
     }
+
+
+    document.addEventListener("DOMContentLoaded", function () {
+    const readMoreButtons = document.querySelectorAll(".read-more");
+
+    readMoreButtons.forEach(button => {
+        button.addEventListener("click", function () {
+            const moreText = this.previousElementSibling.querySelector(".more-text");
+
+            if (moreText.style.display === "inline") {
+                moreText.style.display = "none";
+                this.textContent = "Read More";
+            } else {
+                moreText.style.display = "inline";
+                this.textContent = "Read Less";
+            }
+        });
+    });
+});
+
