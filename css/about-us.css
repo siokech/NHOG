@@ -1,0 +1,138 @@
+/* General Styles 
+.about-us {
+    padding: 15px 20px;
+    background-color: #f8f9fa;
+    text-align: center;
+    margin-top: 5%;
+    margin-bottom: 2%;
+}*/
+
+.about-us {
+    position: relative;
+    padding: 15px 20px;
+    background-color: #5d5461;
+    text-align: center;
+    margin-top: 5%;
+    padding-bottom: 70px;
+}
+
+
+
+
+:root{
+    
+    --box-shadow:0 .5rem 1.5rem rgba(0,0,0,.1);
+    --border:.2rem solid rgba(0,0,0,.1);
+    --outline: .1rem solid rgba(0,0,0,.1);
+    --outline-hover:.1rem solid var(--black);
+    --primary-color: #444e6d;
+}
+
+
+
+p {
+    
+    line-height: 1.6;
+}
+
+.We_See {
+    width: 90%;
+    height: auto;
+    margin: 0 auto; /* Centers the div horizontally */
+    padding: 20px; /* Adds some spacing inside */
+    border-radius: 5px;
+    border: 1px solid #906690;
+    text-align: center; /* Centers text inside */
+    transition: all 0.3s ease-in-out;
+}
+/* Image Gallery */
+.image-gallery {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin: 30px 0;
+}
+
+.image-gallery img {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.image-gallery img:hover {
+    transform: scale(1.05);
+    opacity: 0.9;
+}
+
+/* Read More Functionality */
+.more-text {
+    display: none;
+}
+
+.read-more {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+.read-more:hover {
+    background-color: #0056b3;
+}
+
+/* Founders Section */
+.founders {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+   
+}
+
+.founder {
+    width: 45%;
+    background: #f2ffeb;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+
+    border-radius:.5rem;
+outline-offset:-1rem;
+outline:var(--outline);
+transition:.2s linear;
+
+
+}
+
+.founder img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+@media (max-width: 768px) {
+    .image-gallery img {
+        width: 95%;
+        height: auto;
+    }
+     .founders {
+        flex-direction: column;
+        align-items: center;
+        width: 95%;
+    }
+
+
+    .founder {
+        width: 90%; /* Make each founder take the full width */
+    }
+}

@@ -100,6 +100,7 @@ h1, h2, h3, h4, h5, h6 {
 	font-weight: normal;
 }
 
+
 strong {
 	font-weight: bold;
 }
@@ -321,7 +322,7 @@ a:hover {
 ------------------------------------------------------------------------------*/
 
 #header {
-	padding: 10px 0 20px 0;
+	padding: 15px 0 20px 0;
     position: fixed;
     top: 50px; /* Initially below the top bar */
     left: 0;
@@ -815,44 +816,61 @@ h1.single{
 ------------------------------------------------------------------------------*/
 
 .slider {
-	height: 600px;
-	position: relative;
+		position: relative;
 	overflow: hidden;
 	margin-bottom: 9px;
 }
+/*.slider .bxslider .cover1 {
+	background: url(../images/Graduation3.jpg) no-repeat 50% 50%;
+	background-size: cover;
+	height: 920px;
+	margin-top: 1rem;
+}*/
 
-.slider .bxslider .cover1 {
+.slider .bxslider .cover2 {
 	background: url(../images/cong6.jpg) no-repeat 50% 50%;
 	background-size: cover;
-	height: 600px;
-}
-.slider .bxslider .cover2 {
-	background: url(../images/service1.jpg) no-repeat 50% 50%;
-	background-size: cover;
-	height: 600px;
+	height: 700px;
+	margin-top: 1rem;
 }
 .slider .bxslider .cover3 {
+	background: url(../images/cong3.jpg) no-repeat 50% 50%;
+	background-size: cover;
+	height: 780px;
+	margin-top: 1rem;
+}
+.slider .bxslider .cover4 {
+	background: url(../images/service1.jpg) no-repeat 50% 50%;
+	background-size: cover;
+	height: 780px;
+	margin-top: 1rem;
+}
+.slider .bxslider .cover5 {
 	background: url(../images/service2.jpg) no-repeat 50% 50%;
 	background-size: cover;
-	height: 600px;
-}
-
-.slider .bxslider .cover4 {
-	background: url(../images/service7.jpg) no-repeat 50% 50%;
-	background-size: cover;
-	height: 600px;
-}
-
-.slider .bxslider .cover5 {
-	background: url(../images/service3.jpg) no-repeat 50% 50%;
-	background-size: cover;
-	height: 600px;
+	height: 780px;
+	margin-top: 1rem;
 }
 
 .slider .bxslider .cover6 {
+	background: url(../images/service7.jpg) no-repeat 50% 50%;
+	background-size: cover;
+	height: 780px;
+	margin-top: 1rem;
+}
+
+.slider .bxslider .cover7 {
+	background: url(../images/service3.jpg) no-repeat 50% 50%;
+	background-size: cover;
+	height: 780px;
+	margin-top: 1rem;
+}
+
+.slider .bxslider .cover8 {
 	background: url(../images/service5.jpg) no-repeat 50% 50%;
 	background-size: cover;
-	height: 600px;
+	height: 780px;
+	margin-top: 1rem;
 }
 
 
@@ -2790,3 +2808,44 @@ margin:1rem;
 .nugging-icon:hover {
     transform: scale(1.1);
 }
+
+.ministries-section {
+        text-align: center;
+        padding: 50px 20px;
+        background-color: #f8f8f8;
+    }
+
+    .ministries-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 20px;
+        max-width: 1200px;
+        margin: auto;
+    }
+
+    .ministry {
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        overflow: hidden;
+    }
+   
+    .image-slider {
+        width: 100%;
+        height: 200px;
+        background-size: cover;
+        background-position: center;
+        border-radius: 8px;
+        transition: opacity 1s ease-in-out;
+    }
+
+    h3 {
+        margin-top: 15px;
+        color: #5f416d;
+    }
+
+    p {
+        color: #555;
+    }
