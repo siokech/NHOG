@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - NHoGI</title>
+ <link rel="stylesheet" media="all" href="css/style.css">
+  <link rel="stylesheet" media="all" href="css/about-us.css">
+
+    <script defer src="script.js"></script>
+
+     <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+ <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+ <!-- Font Awesome CDN -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+
+<style>
+       
+        
+        .containerr {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+            gap: 20px;
+            max-width: 1000px;
+            margin: auto;
+        }
+        .ministry {
+            position: relative;
+            width: 100%;
+            height: 300px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: opacity 1.5s ease-in-out;
+        }
+        .ministry h3 {
+            position: absolute;
+            bottom: 10px;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.6);
+            color: white;
+            padding: 10px;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="top-bar-placeholder"></div>
+
+<!-- Top Contact Bar -->
+<div id="top-bar" class="top-bar">
+    <div class="container contents" >
+        <div class="top-left">
+            <a href="giving.html" class="donate-button" style="color:white;">Donate</a>
+        </div>
+        <div class="top-right">
+            <span class="contact-info"><i class="fas fa-envelope"></i> info@nhog.org</span>
+            <span class="contact-info"><i class="fas fa-phone-alt"></i> +254 782 650 002</span>
+        </div>
+    </div>
+</div>
+
+<!-- End of contact Bar -->
+
+
+    <header id="header"> 
+        <div class="container" style="background-color: #8a5aa5;width:100%;">
+            <a href="index.html" id="logo" title="NHOG">NHOG</a>
+            <div class="menu-trigger"></div>
+            <nav id="menu">
+                <ul>
+                    <li><a style="color:white; font-size:1.5rem;" href="index.html">Home</a></li>
+                    <li><a style="color:white;font-size:1.5rem;"  href="about.html">About Us</a></li>
+                    <li><a  style="color:white;font-size:1.5rem;" href="services.html">Services</a></li>
+                    
+                                    </ul>
+                <ul>
+                    <li><a style="color:white;font-size:1.5rem;" href="ministries.html">Ministries</a></li>
+                    <li><a style="color:white;font-size:1.5rem;" href="giving.html">Giving</a></li>
+                     <li><a style="color:white;font-size:1.5rem;" href="contacting.html">Contact Us</a></li>
+              
+                </ul>
+            </nav>
+            <!-- / navigation -->
+        </div>
+        <!-- / container -->
+    
+    </header>
+    <!-- / header -->	
+	
+	<div class="content">
+		<h1 style="text-align: center; margin-top:7%;">Our Church Ministries</h1>
+    <div class="containerr">
+        <div id="men-ministry" class="ministry"><h3>Men's Ministry</h3></div>
+        <div id="women-ministry" class="ministry"><h3>Women's Ministry</h3></div>
+        <div id="deborah-ministry" class="ministry"><h3>Deborah Ministry - Charity</h3></div>
+        <div id="children-ministry" class="ministry"><h3>Children's Ministry</h3></div>
+        <div id="praise-ministry" class="ministry"><h3>Praise and Worship Ministry</h3></div>
+        <div id="ushering-ministry" class="ministry"><h3>Ushering & Hospitality</h3></div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const ministries = {
+              "men-ministry": ["../images/Deborah1.JPG", "../images/Deborah2.JPG", "../images/Deborah3.JPG"],
+                "women-ministry": ["../images/Deborah5.JPG", "../images/Deborah7.JPG", "../images/Deborah6.JPG"],
+                "deborah-ministry": ["../images/Deborah4.JPG", "../images/Deborah5.JPG", "../images/Deborah6.JPG"],
+                "children-ministry": ["../images/Deborah7.JPG", "../images/Deborah8.JPG", "../images/Deborah9.JPG"],
+                "praise-ministry": ["../images/Deborah10.JPG", "../images/Deborah11.JPG", "../images/Deborah12.JPG"],
+                "ushering-ministry": ["../images/Deborah2.JPG", "../images/Deborah4.JPG", "../images/Deborah6.JPG"]
+            };
+
+            function startSlideshow(id, images, delay) {
+                let index = 0;
+                const element = document.getElementById(id);
+                if (!element) return;
+                element.style.backgroundImage = `url('${images[index]}')`;
+                index++;
+
+                setInterval(() => {
+                    element.style.opacity = "0";
+                    setTimeout(() => {
+                        element.style.backgroundImage = `url('${images[index]}')`;
+                        element.style.opacity = "1";
+                        index = (index + 1) % images.length;
+                    }, 1500);
+                }, delay);
+            }
+
+            let baseDelay = 30000; // 30 seconds
+            let staggerDelay = 5000; // Each ministry changes at different times
+            let count = 0;
+            for (const id in ministries) {
+                startSlideshow(id, ministries[id], baseDelay + (count * staggerDelay));
+                count++;
+            }
+        });
+    </script>
+</body>
+	</div>
+	
+	<footer id="footer">
+		<div class="container">
+			<section>
+				<article class="col-1">
+					<h3>Contact</h3>
+					<ul>
+						<li class="address"><a href="#">Kakamega- Kisumu Highway<br>Behind Absa Bank</a></li>
+						<li class="mail"><a href="#">info@nhog.org</a></li>
+						<li class="phone last"><a href="#">+254 782 650 002
+ </a></li>
+					</ul>
+				</article>
+				<article class="col-2">
+					<h3>Forum topics</h3>
+					<ul>
+						<li><a href="#">Why everyone should be born again.</a></li>
+						<li><a href="#">How to build your faith in God</a></li>
+						<li><a href="#">The mystrey of spiritual sacrifice </a></li>
+						<li><a href="#">Dominion over evil spirits.</a></li>
+						<li class="last"><a href="#"> The mystery of servanthood </a></li>
+					</ul>
+				</article>
+				<article class="col-3">
+					<h3>Social media</h3>
+					<p style="color:white;">Below are our social media handles. Follow us for sermons, prayers, and spiritually uplifying songs.</p>
+					<ul>
+						<li class="facebook"><a href="#">Facebook</a></li>
+						<li class="google-plus"><a href="#">Google+</a></li>
+						<li class="twitter"><a href="#">X-Space</a></li>
+						<li class="pinterest"><a href="#">Pinterest</a></li>
+					</ul>
+				</article>
+				<article class="col-4">
+					<h3>Newsletter</h3>
+					<p style="color:white;">Sign Up for our newsletter. We will send you sermons and scriptures that will help you grow your spiritual life. We will also remind you of our upcoming events.</p>
+					<form action="#">
+						<input placeholder="Email address..." type="text">
+						<button type="submit">Subscribe</button>
+					</form>
+					<ul>
+						<li><a href="#"></a></li>
+					</ul>
+				</article>
+			</section>
+			<p class="copy">Copyright 2025 New House of Grace Church. Designed by <a href="#Simon" title="Designed by Simon Okech" target="_blank">Simon Okech</a>. All rights reserved.</p>
+		</div>
+		<!-- / container -->
+	</footer>	
+	<!-- / footer -->
+
+	<div id="fancy">
+		<h2>Request information</h2>
+		<form action="#">
+			<div class="left">
+				<fieldset class="mail"><input placeholder="Email address..." type="text"></fieldset>
+				<fieldset class="name"><input placeholder="Name..." type="text"></fieldset>
+				<fieldset class="subject"><select><option>Choose subject...</option><option>Choose subject...</option><option>Choose subject...</option></select></fieldset>
+			</div>
+			<div class="right">
+				<fieldset class="question"><textarea placeholder="Question..."></textarea></fieldset>
+			</div>
+			<div class="btn-holder">
+				<button class="btn blue" type="submit">Send request</button>
+			</div>
+		</form>
+	</div>
+
+	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+  <script>window.jQuery || document.write("<script src='Js/jquery-1.11.1.min.js'>\x3C/script>")</script>
+	<script src="Js/plugins.js"></script>
+	<script src="Js/main.js"></script>
+	 <script src="Js/count.js"></script>
+	 
+</body>
+</html>
