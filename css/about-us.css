@@ -7,6 +7,7 @@
     margin-bottom: 2%;
 }*/
 
+
 .about-us {
     position: relative;
     padding: 15px 20px;
@@ -54,12 +55,19 @@ p {
     margin: 30px 0;
 }
 
+.image-gallery {
+    display: flex;
+    overflow: hidden;
+    
+    position: relative;
+} 
 .image-gallery img {
     width: 300px;
     height: 200px;
     object-fit: cover;
     border-radius: 8px;
-    transition: transform 0.3s ease, opacity 0.3s ease;
+    /*transition: transform 0.3s ease, opacity 0.3s ease;*/
+       transition: transform 0.8s ease-in-out;
 }
 
 .image-gallery img:hover {
