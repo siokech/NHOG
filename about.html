@@ -148,7 +148,7 @@
                     </ul>
                 </article>
             </section>
-            <p class="copy">Copyright 2025 New House of Grace Church. Designed by <a href="#Simon" title="Designed by Simon Okech" target="_blank">Simon Okech</a>. All rights reserved.</p>
+            <p class="copy">Copyright 2025 GBN Media - New House of Grace Church. All rights reserved.</p>
         </div>
         <!-- / container -->
     </footer>
@@ -171,7 +171,37 @@
         </form>
     </div>
 
+<script>
+ document.addEventListener("DOMContentLoaded", function () {
+    const images = [
+        "images/past1.jpg", "images/birthday.jpg", "images/cong7.jpg", 
+        "images/cong9.jpg", "images/cong10.jpg", "images/cong5.jpg", 
+        "images/Graduation2.jpg", "images/Deborah4.jpg", "images/service5.jpg"
+    ];
+    
+    const gallery = document.querySelectorAll(".image-gallery img");
+    let index = [0, 1, 2]; // Initial indices for three images
 
+    function updateImages() {
+        gallery.forEach((img, i) => {
+            index[i] = (index[i] + 1) % images.length; // Cycle through the images
+
+            // Apply smooth transition effect
+            img.style.transition = "opacity 1s ease-in-out";
+            img.style.opacity = 0.5; // Slightly fade before changing image
+            
+            setTimeout(() => {
+                img.src = images[index[i]];
+                img.style.opacity = 1; // Restore full opacity smoothly
+            }, 800); // Change image after slight fade-out
+        });
+    }
+
+    setInterval(updateImages, 7000); // Change images every 3 seconds
+});
+
+
+</script>
 
 
 
