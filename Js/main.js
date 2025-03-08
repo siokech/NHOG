@@ -317,3 +317,28 @@ setTimeout(() => {
     });
 });
 
+document.addEventListener("DOMContentLoaded", function () {
+    let slides = document.querySelectorAll(".fliers-container .slide");
+    let index = 0;
+    let isPaused = false;
+    let autoSlide = setInterval(showNextSlide, 5000);
+
+    function showNextSlide() {
+        if (!isPaused) {
+            slides.forEach(slide => slide.classList.remove("active"));
+            slides[index].classList.add("active");
+            index = (index + 1) % slides.length;
+        }
+    }
+
+    // Show first image immediately
+    slides[0].classList.add("active");
+
+    // Clicking an image toggles pause/resume
+    slides.forEach(slide => {
+        slide.addEventListener("click", function () {
+            isPaused = !isPaused; // Toggle pause state
+        });
+    });
+
+});
