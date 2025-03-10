@@ -11,7 +11,7 @@
 .about-us {
     position: relative;
     padding: 15px 20px;
-    background-color: #5d5461;
+    background: linear-gradient(to right, #b92b27, #9b1b9b);
     text-align: center;
     margin-top: 5%;
     padding-bottom: 70px;
@@ -106,7 +106,9 @@ p {
 
 .founder {
     width: 45%;
-    background: #f2ffeb;
+ background: linear-gradient(to right, #bdb7c1, #9f97a4, #7c6989);
+
+
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);

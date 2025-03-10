@@ -2513,16 +2513,13 @@ a.btn.blue,
   display: grid;
   gap: 1rem;
   background-color: var(--extra-light);
- 
- box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.1);
- cursor: pointer;
-  
-
-border-radius:.5rem;
-outline-offset:-1rem;
-outline:var(--outline);
-transition:.2s linear;
-margin:1rem; 
+  box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  border-radius:.5rem;
+  outline-offset:-1rem;
+  outline:var(--outline);
+  transition:.2s linear;
+  margin:1rem; 
 	
 
 }
@@ -2686,7 +2683,7 @@ margin:1rem;
     margin-top: 20px;
     background: url('../images/jesus-b.jpg') no-repeat center center/cover;
     height: 560px;
-    
+
 }
 
 .church-fliers h2 {
