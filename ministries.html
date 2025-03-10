@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us - NHoGI</title>
- <link rel="stylesheet" media="all" href="css/style.css">
+    <title>Order of Service - NHOG</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+     <link rel="stylesheet" media="all" href="css/style.css">
   <link rel="stylesheet" media="all" href="css/about-us.css">
 
     <script defer src="script.js"></script>
@@ -16,60 +17,396 @@
  <link rel="icon" type="image/x-icon" href="images/favicon.ico">
  <!-- Font Awesome CDN -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
-
-<style>
-       
-        
-        .containerr {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
-            gap: 20px;
-            max-width: 1000px;
-            margin: auto;
-        }
-        .ministry {
-            position: relative;
-            width: 100%;
-            height: 300px;
-            background-size: cover;
-            background-position: center;
-            border-radius: 10px;
-            overflow: hidden;
-            transition: opacity 1.5s ease-in-out;
-        }
-        .ministry h3 {
-            position: absolute;
-            bottom: 10px;
-            left: 0;
-            right: 0;
-            background: rgba(0, 0, 0, 0.6);
-            color: white;
-            padding: 10px;
+    <style>
+        * {
             margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
         }
+
+        body {
+            background-color: #f4f4f4;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .containerr {
+            max-width: 1200px;
+            margin: 4rem auto 3rem;
+        }
+
+        h1 {
+            color: #8a5aa5;
+            margin-bottom: 20px;
+        }
+        .service {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px; /* Reduce the gap between image and text */
+            margin: 20px 0;
+            background: white;
+            padding: 20px 30px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+}
+
+        .service:hover {
+    transform: scale(1.02);
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+ 
+    }
+
+        .service img {
+            width: 50%;
+            border-radius: 10px;
+        }
+
+        .service .text {
+            width: 55%;
+            text-align: left;
+        }
+
+        .service:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        h2 {
+            color: #8a5aa5;
+            margin-bottom: 10px;
+        }
+
+        .details {
+            font-size: 18px;
+            font-weight: bold;
+            color: #5a2d82;
+            margin: 10px 0;
+        }
+
+        .details i {
+            margin-right: 8px;
+            color: #8a5aa5;
+        }
+
+        p {
+            color: #333;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            .service {
+                flex-direction: column !important;
+                text-align: center;
+                padding: 15px;
+            }
+
+            .service img {
+                width: 100%;
+                margin-bottom: 15px;
+            }
+
+            .service .text {
+                width: 100%;
+                text-align: center;
+            }
+        }
+
+.order-of-service {
+    position: relative;
+    width: 100%;
+    padding: 60px 3px;
+    color: white;
+    text-align: left; /* Align text to the left */
+    margin-bottom: 40px;
+    background: url('images/kenministries.JPG') no-repeat center center/cover;
+    height: 35rem;
+    display: flex;
+    align-items: center; /* Vertically center text */
+    text-transform: none; /* Ensures sentence case */
+}
+
+.order-text {
+    position: absolute;
+    left: 5%; /* Moves text to the left */
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+    max-width: 40%; /* Adjusts text width */
+    text-transform: none !important;
+}
+
+.order-text {
+    position: absolute;
+    left: 10%; /* Adjust this value to move text more to the left */
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: left;
+    width: 40%; /* Adjust width for better readability */
+}
+
+.order-of-service h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.order-of-service p {
+    font-size: 1.2rem;
+    font-weight: 300;
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+@media (max-width: 1024px) {
+    .order-of-service {
+        height: 35rem;
+        padding: 40px 10px;
+        background-size: contain; /* Adjust background for medium screens */
+        background-position: center center;
+    }
+
+    .order-of-service h1 {
+        font-size: 2.2rem;
+    }
+
+    .order-of-service p {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .order-of-service {
+        height: 30rem;
+        padding: 30px 10px;
+        background-size: contain; /* Prevents image from being cut off */
+        background-position: center center;
+    }
+
+    .order-of-service h1 {
+        font-size: 2rem;
+    }
+
+    .order-of-service p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .order-of-service {
+        height: 25rem;
+        padding: 20px 5px;
+        background-size: contain; /* Ensures full image is visible */
+        background-position: center center;
+    }
+
+    .order-of-service h1 {
+        font-size: 1.8rem;
+    }
+
+    .order-of-service p {
+        font-size: 0.9rem;
+    }
+}
+
+/* Add responsiveness */
+@media (max-width: 768px) {
+    .order-of-service h1 {
+        font-size: 2rem;
+    }
+
+    .order-of-service p {
+        font-size: 1rem;
+    }
+}
+
+
+.text {
+    flex: 1;
+}
+
+.details {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.intro {
+    font-size: 1.2rem;
+    font-weight: bold;
+    
+}
+
+.motto {
+    font-style: italic;
+    font-weight: bold;
+    color: #FF6347;
+}
+
+.questions {
+    list-style-type: none;
+    padding: 0;
+}
+
+.questions li {
+    padding: 5px 0;
+    font-style: italic;
+}
+
+.social a {
+    color:blue;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.social a:hover {
+    text-decoration: underline;
+}
+
+/* Our Branches Section */
+.branches-section {
+    padding: 50px 5%;
+    text-align: center;
+    background: linear-gradient(to top, #b19dad, #765b81, #5e4d8b, #a44491);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Section Title */
+.branches-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+/* Table Container */
+.branches-container {
+    width: 100%;
+    max-width: 95%;
+    overflow-x: auto;
+    display: flex;
+    justify-content: center;
+}
+
+/* Table Styling */
+.branches-table {
+    width: 100%;
+    max-width: 900px;
+    border-collapse: collapse;
+    background: rgba(255, 255, 255, 0.9); /* Slight transparency for smooth blend */
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Table Header */
+.branches-table thead {
+    background: #3d2352; /* Deep purple to match gradient */
+    color: #fff;
+}
+
+.branches-table th, 
+.branches-table td {
+    padding: 14px;
+    text-align: left;
+    border-bottom: 2px solid #ddd;
+    font-size: 1rem;
+}
+
+/* New Alternating Row Colors */
+.branches-table tbody tr:nth-child(odd) {
+    background: #e4d3ff; /* Soft lavender */
+}
+
+.branches-table tbody tr:nth-child(even) {
+    background: #d1c4e9; /* Light purple */
+}
+
+/* Hover Effect */
+.branches-table tbody tr:hover {
+    background: #a44491; /* Matches top gradient */
+    color: white;
+    transition: all 0.3s ease-in-out;
+    font-weight: bold;
+}
+
+/* Responsive Table */
+@media (max-width: 768px) {
+    .branches-container {
+        width: 100%;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+    }
+
+    .branches-table {
+        display: block;
+        width: 100%;
+        max-width: 100%;
+        border-radius: 0;
+    }
+    
+    .branches-table thead {
+        display: none;
+    }
+    
+    .branches-table tbody {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .branches-table tbody tr {
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+        margin-bottom: 12px;
+        background: rgba(255, 255, 255, 0.95);
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        padding: 12px;
+    }
+    
+    .branches-table td {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px;
+        border-bottom: none;
+        font-size: 1rem;
+    }
+    
+    .branches-table td::before {
+        content: attr(data-label);
+        font-weight: bold;
+        color: #3d2352;
+    }
+}
+
     </style>
 </head>
 <body>
-
-    <div id="top-bar-placeholder"></div>
+ <div id="top-bar-placeholder"></div>
 
 <!-- Top Contact Bar -->
 <div id="top-bar" class="top-bar">
     <div class="container contents" >
-        <div class="top-left">
-            <a href="giving.html" class="donate-button" style="color:white;">Donate</a>
-        </div>
+       
         <div class="top-right">
             <span class="contact-info"><i class="fas fa-envelope"></i> info@nhog.org</span>
-            <span class="contact-info"><i class="fas fa-phone-alt"></i> +254 782 650 002</span>
+            <span class="contact-info"><i class="fas fa-phone-alt"></i> +254 725 522 186 </span>
         </div>
     </div>
 </div>
 
 <!-- End of contact Bar -->
-
-
     <header id="header"> 
         <div class="container" style="background-color: #8a5aa5;width:100%;">
             <a href="index.html" id="logo" title="NHOG">NHOG</a>
@@ -80,12 +417,11 @@
                     <li><a style="color:white;font-size:1.5rem;"  href="about.html">About Us</a></li>
                     <li><a  style="color:white;font-size:1.5rem;" href="services.html">Services</a></li>
                     
-                                    </ul>
+                </ul>
                 <ul>
                     <li><a style="color:white;font-size:1.5rem;" href="ministries.html">Ministries</a></li>
                     <li><a style="color:white;font-size:1.5rem;" href="giving.html">Giving</a></li>
-                     <li><a style="color:white;font-size:1.5rem;" href="contacting.html">Contact Us</a></li>
-              
+                    <li><a style="color:white;font-size:1.5rem;" href="contacting.html">Contact Us</a></li>
                 </ul>
             </nav>
             <!-- / navigation -->
@@ -93,131 +429,300 @@
         <!-- / container -->
     
     </header>
-    <!-- / header -->	
-	
-	<div class="content">
-		<h1 style="text-align: center; margin-top:7%;">Our Church Ministries</h1>
+    <!-- / header -->   
     <div class="containerr">
-        <div id="men-ministry" class="ministry"><h3>Men's Ministry</h3></div>
-        <div id="women-ministry" class="ministry"><h3>Women's Ministry</h3></div>
-        <div id="deborah-ministry" class="ministry"><h3>Deborah Ministry - Charity</h3></div>
-        <div id="children-ministry" class="ministry"><h3>Children's Ministry</h3></div>
-        <div id="praise-ministry" class="ministry"><h3>Praise and Worship Ministry</h3></div>
-        <div id="ushering-ministry" class="ministry"><h3>Ushering & Hospitality</h3></div>
+         <h1 style="text-align: center; margin-top:7%;">Our Church Ministries</h1>
+<section class="order-of-service">
+    <div class="content">
+        <h2 class="order-text" style="text-transform: none !important;">Everyone Gets a Place to Serve at New House of Grace International. Come expecting to recieve grace to serve the living God. </h2>
     </div>
+</section>
 
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const ministries = {
-              "men-ministry": ["images/deborah1.jpg", "images/deborah2.jpg", "images/deborah3.jpg"],
-                "women-ministry": ["images/deborah5.jpg", "images/deborah7.jpg", "images/deborah6.jpg"],
-                "deborah-ministry": ["images/deborah4.jpg", "images/deborah5.jpg", "images/deborah6.jpg"],
-                "children-ministry": ["images/deborah7.jpg", "images/deborah8.jpg", "images/deborah9.jpg"],
-                "praise-ministry": ["images/deborah10.jpg", "images/deborah11.jpg", "images/deborah12.jpg"],
-                "ushering-ministry": ["images/deborah2.jpg", "images/deborah4.jpg", "images/deborah6.jpg"]
-            };
+        <div class="service">
 
-            function startSlideshow(id, images, delay) {
-                let index = 0;
-                const element = document.getElementById(id);
-                if (!element) return;
-                element.style.backgroundImage = `url('${images[index]}')`;
-                index++;
 
-                setInterval(() => {
-                    element.style.opacity = "0";
-                    setTimeout(() => {
-                        element.style.backgroundImage = `url('${images[index]}')`;
-                        element.style.opacity = "1";
-                        index = (index + 1) % images.length;
-                    }, 1500);
-                }, delay);
-            }
+            <img src="images/women.JPG" alt="Women Ministry">
+            <div class="text">
+                <h3 style="font-size:2.5rem;">Women's Ministry</h3> <br/>
+                
+                <p>We seek to empower the women in a manner that teaches them to follow in God-given biblical place. That wife, mother, daughter, and member of society are responsible in all their ways. With decency and responsible bringing glory to God.
 
-            let baseDelay = 30000; // 30 seconds
-            let staggerDelay = 5000; // Each ministry changes at different times
-            let count = 0;
-            for (const id in ministries) {
-                startSlideshow(id, ministries[id], baseDelay + (count * staggerDelay));
-                count++;
-            }
-        });
-    </script>
-</body>
-	</div>
-	
-	<footer id="footer">
-		<div class="container">
-			<section>
-				<article class="col-1">
-					<h3>Contact</h3>
-					<ul>
-						<li class="address"><a href="#">Kakamega- Kisumu Highway<br>Behind Absa Bank</a></li>
-						<li class="mail"><a href="#">info@nhog.org</a></li>
-						<li class="phone last"><a href="#">+254 782 650 002
+In essence, the NHoGI Ministries are keen to create awareness among the ladies on matters of self-esteem, economic empowerment, and social responsibility counselling with the purpose to drive social-economic growth in their societies.
+
+The ministry is also charged with training and preparing ladies for various roles in leadership and mentorship for other girls, they are tasked with championing moral correction among the girls both in and out through community sensitizations, training, and outreaches. This has been one of the areas we have registered success to the glory of God.
+
+The women also seek to foster oneness among the ladies by lending a hand to carry another sister in trouble and encouraging those that are in a bad place.
+
+We seek to see women take up their places and roles in homes and society in general.</p>
+            </div>
+        </div>
+
+        <div class="service">
+            <img src="images/worship1.JPG" alt="Praise and Worship">
+            <div class="text">
+                <h3 style="font-size: 2.5rem;">Praise & Worship Ministry</h2>
+                <br/>
+                <p>The Voice of Triumph (VoT) leads powerful praise and worship sessions every week at NHoGI being a very important aspect of any ministry, our unique delivery and the ministration are distinct.
+
+We seek to edify the spirit of man to connect with the maker in song and dance. The team comprises various ethnicities and cultures from all across Africa & beyond and we do it with a passion for the glory of God.
+
+Our NHoGI Worship Ministry also offers training mentorship programs for the children’s church on vocals, instruments, etc</p>
+            </div>
+        </div>
+
+        <div class="service">
+            <img src="images/men.JPG" alt="Men's Ministry">
+            <div class="text">
+
+                                <h3 style="font-size:2.5rem;">Men's Ministry</h3> <br/>
+         
+<p>As the years have gone by and modernization has taken center stage with the message of women’s emancipation, it’s no surprise that in so many ways men have been sidelined and left to play second fiddle in relationships, society, and government.</p>
+
+<p>The Men of Valor at NHoGI Ministries seek to teach and admonish fellow men in God-given leadership roles. The ministry’s core mandates are:</p>
+
+<ul style="margin-left: 20px;">
+    <li>-To teach men to fulfill their God-given mandate as heads, leaders, and providers.</li>
+    <li>-To teach men to be fathers both at home and on missions, in a generation where fathers have left their place for one reason or another.</li>
+    <li>-To teach men to be the symbols of unity and love both at home and away, to be responsible and accountable.</li>
+    <li>-To encourage men to maintain a biblical standard in their approach to the steadfastly changing customs today.</li>
+    <li>-To offer counseling and related assistance to men, young and old, in their personal lives or walk with Christ.</li>
+    <li>-To create a unity platform for men to share ideas and unwind.</li>
+</ul>
+
+<p>With the patronage of Apostle Ken, the men have embraced their duties and actively serve in different departments, from ushering to protocol, worship, and children’s church, all to the glory of God.</p>
+
+            </div>
+        </div>
+
+        <div class="service">
+            <img src="images/service3.JPG" alt="Celebration Service">
+            <div class="text">
+                <h3 style="font-size:2.5rem;">Married/Family Ministry</h3> <br/>
+                <p>The heart of any civilization is family. today it’s under threat and as a ministry, we are passionate to see thriving family units as it’s the bedrock of our nation.
+
+we seek to restore the sanctity of marriage and we have witnessed a growing number of young people freely entering it. We believe that God instituted marriage to be between one man and one woman.
+
+At NHoGI the married ministry offers premarital counselling to new couples and offers couples therapy to couples that need it. it’s also a conflict resolution docket for all matters pertaining to marriage, and family.
+
+Apostle Ken and Rev. Judy Baraza are the chief patrons with the head of marrieds serving directly under them.</p>
+            </div>
+        </div>
+
+        <div class="service">
+    <img src="images/youth.JPG" alt="Youth Ministry">
+    <div class="text">
+        <h3 style="font-size:2.5rem;">Youth Ministry</h3> <br/>
+        
+        <p class="intro">
+            We are dynamic young adults with a passion for Christ.
+        </p>
+        <p>
+            As the youth arm of the ministry, equipped to set the world aflame for Christ, we are one of the fastest-growing and most vibrant youth churches in the world. 
+            We cherish grassroots growth through sound teachings, observance, listening, and responding to immediate needs. Our goal is to create a safe, loving, and wholesome 
+            atmosphere for young people to thrive.
+        </p>
+
+        <h3>Motto:</h3>
+        <p class="motto">The Young, Brave, and Strong</p>
+
+        <h3>Mission Statement:</h3>
+        <p>
+            To reach out to fellow youth with the zeal to transform society with the Gospel of Jesus Christ.
+        </p>
+
+        <h3>The Flame: Life-Giving Answers to Burning Questions</h3>
+        <ul class="questions">
+            <li>“What is my purpose?”</li>
+            <li>“Do I need God?”</li>
+            <li>“Now that I am saved?”</li>
+        </ul>
+
+        <p>
+            In response, the pastoral team delivers God’s revealed Word in an atmosphere that nurtures and strengthens the spiritual paths of our young society.
+        </p>
+
+        <p class="social">
+            Follow us on our social media: <a href="#" target="_blank">Facebook - New House of Grace Youth Aflame</a>
+        </p>
+    </div>
+</div>
+
+
+<section class="branches-section">
+    <h3 style="font-size: 2.5rem;color:white;">Visit Our Branches</h3> <br/>
+    <div class="branches-container">
+        <table class="branches-table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Country</th>
+                    <th>Branch Address</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>South Africa</td>
+                    <td>Cape Town</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>South Africa</td>
+                    <td>Johannesburg</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>South Africa</td>
+                    <td>Limpopo</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Lesotho</td>
+                    <td>Maseru</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>Tanzania</td>
+                    <td>Arusha</td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>Tanzania</td>
+                    <td>Moshi</td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td>USA</td>
+                    <td>West Virginia</td>
+                </tr>
+                <tr>
+                    <td>8</td>
+                    <td>Kenya</td>
+                    <td>Kiambu</td>
+                </tr>
+                <tr>
+                    <td>9</td>
+                    <td>Kenya</td>
+                    <td>Voi</td>
+                </tr>
+                <tr>
+                    <td>10</td>
+                    <td>Kenya</td>
+                    <td>Syokimau</td>
+                </tr>
+                <tr>
+                    <td>11</td>
+                    <td>Kenya</td>
+                    <td>Kakamega</td>
+                </tr>
+                <tr>
+                    <td>12</td>
+                    <td>Kenya</td>
+                    <td>Ruiru</td>
+                </tr>
+                <tr>
+                    <td>13</td>
+                    <td>Kenya</td>
+                    <td>Lwakhakha</td>
+                </tr>
+                <tr>
+                    <td>14</td>
+                    <td>Kenya</td>
+                    <td>Bisunu</td>
+                </tr>
+                <tr>
+                    <td>15</td>
+                    <td>Kenya</td>
+                    <td>Gathanga</td>
+                </tr>
+                <tr>
+                    <td>16</td>
+                    <td>Kenya</td>
+                    <td>Kibabii</td>
+                </tr>
+                <tr>
+                    <td>17</td>
+                    <td>Kenya</td>
+                    <td>Luanda</td>
+                </tr>
+                <tr>
+                    <td>18</td>
+                    <td>Kenya</td>
+                    <td>Malakisi</td>
+                </tr>
+                <tr>
+                    <td>19</td>
+                    <td>Kenya</td>
+                    <td>Soy</td>
+                </tr>
+                <tr>
+                    <td>20</td>
+                    <td>Kenya</td>
+                    <td>Nanyuki</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+
+
+
+    </div>
+ <footer id="footer">
+        <div class="container">
+            <section>
+                <article class="col-1">
+                    <h3>Contact</h3>
+                    <ul>
+                        <li class="address"><a href="#">Kakamega- Kisumu Highway<br>Behind Absa Bank</a></li>
+                        <li class="mail"><a href="#">info@nhog.org</a></li>
+                        <li class="phone last"><a href="#">+254 725 522 186
  </a></li>
-					</ul>
-				</article>
-				<article class="col-2">
-					<h3>Forum topics</h3>
-					<ul>
-						<li><a href="#">Why everyone should be born again.</a></li>
-						<li><a href="#">How to build your faith in God</a></li>
-						<li><a href="#">The mystrey of spiritual sacrifice </a></li>
-						<li><a href="#">Dominion over evil spirits.</a></li>
-						<li class="last"><a href="#"> The mystery of servanthood </a></li>
-					</ul>
-				</article>
-				<article class="col-3">
-					<h3>Social media</h3>
-					<p style="color:white;">Below are our social media handles. Follow us for sermons, prayers, and spiritually uplifying songs.</p>
-					<ul>
-						<li class="facebook"><a href="#">Facebook</a></li>
-						<li class="google-plus"><a href="#">Google+</a></li>
-						<li class="twitter"><a href="#">X-Space</a></li>
-						<li class="pinterest"><a href="#">Pinterest</a></li>
-					</ul>
-				</article>
-				<article class="col-4">
-					<h3>Newsletter</h3>
-					<p style="color:white;">Sign Up for our newsletter. We will send you sermons and scriptures that will help you grow your spiritual life. We will also remind you of our upcoming events.</p>
-					<form action="#">
-						<input placeholder="Email address..." type="text">
-						<button type="submit">Subscribe</button>
-					</form>
-					<ul>
-						<li><a href="#"></a></li>
-					</ul>
-				</article>
-			</section>
-			<p class="copy">Copyright 2025 GBN Media - New House of Grace Church. All rights reserved.</p>
-		</div>
-		<!-- / container -->
-	</footer>	
-	<!-- / footer -->
+                    </ul>
+                </article>
+                <article class="col-2">
+                    <h3>Forum topics</h3>
+                    <ul>
+                        <li><a href="#">Why everyone should be born again.</a></li>
+                        <li><a href="#">How to build your faith in God</a></li>
+                        <li><a href="#">The mystrey of spiritual sacrifice </a></li>
+                        <li><a href="#">Dominion over evil spirits.</a></li>
+                        <li class="last"><a href="#"> The mystery of servanthood </a></li>
+                    </ul>
+                </article>
+                <article class="col-3">
+                    <h3>Social media</h3>
+                    <p style="color:white;">Below are our social media handles. Follow us for sermons, prayers, and spiritually uplifying songs.</p>
+                    <ul>
+                        <li class="facebook"><a href="#">Facebook</a></li>
+                        <li class="google-plus"><a href="#">Google+</a></li>
+                        <li class="twitter"><a href="#">X-Space</a></li>
+                        <li class="pinterest"><a href="#">Pinterest</a></li>
+                    </ul>
+                </article>
+                <article class="col-4">
+                    <h3>Newsletter</h3>
+                    <p style="color:white;">Sign Up for our newsletter. We will send you sermons and scriptures that will help you grow your spiritual life. We will also remind you of our upcoming events.</p>
+                    <form action="#">
+                        <input placeholder="Email address..." type="text">
+                        <button type="submit">Subscribe</button>
+                    </form>
+                    <ul>
+                        <li><a href="#"></a></li>
+                    </ul>
+                </article>
+            </section>
+            <p class="copy">Copyright 2025 GBN Media - New House of Grace Church. All rights reserved.</p>
+        </div>
+        <!-- / container -->
+    </footer>   
+    <!-- / footer -->
 
-	<div id="fancy">
-		<h2>Request information</h2>
-		<form action="#">
-			<div class="left">
-				<fieldset class="mail"><input placeholder="Email address..." type="text"></fieldset>
-				<fieldset class="name"><input placeholder="Name..." type="text"></fieldset>
-				<fieldset class="subject"><select><option>Choose subject...</option><option>Choose subject...</option><option>Choose subject...</option></select></fieldset>
-			</div>
-			<div class="right">
-				<fieldset class="question"><textarea placeholder="Question..."></textarea></fieldset>
-			</div>
-			<div class="btn-holder">
-				<button class="btn blue" type="submit">Send request</button>
-			</div>
-		</form>
-	</div>
 
-	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
-  <script>window.jQuery || document.write("<script src='Js/jquery-1.11.1.min.js'>\x3C/script>")</script>
-	<script src="Js/plugins.js"></script>
-	<script src="Js/main.js"></script>
-	 <script src="Js/count.js"></script>
-	 
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script>window.jQuery || document.write("<script src='Js/jquery-1.11.1.min.js'>\x3C/script>")</script>
+    <script src="Js/plugins.js"></script>
+    <script src="Js/main.js"></script>
+     <script src="Js/count.js"></script>
 </body>
 </html>
