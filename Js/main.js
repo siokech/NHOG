@@ -342,3 +342,14 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 });
+
+
+// Wait for the page to load fully before displaying content
+document.addEventListener("DOMContentLoaded", function() {
+    document.body.classList.add("loaded");
+});
+document.addEventListener("DOMContentLoaded", function() {
+    setTimeout(() => {
+        document.body.classList.add("loaded");
+    }, 500); // Delay to allow a smooth transition
+});
