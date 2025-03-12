@@ -37,15 +37,22 @@ $(document).ready(function() {
     });
 
     const events = {
-        "2025-02-24": "Scholarship Program",
-        "2025-02-25": "Scholarship Program",
+        
         "2025-03-11": "Mission Team from the UK",
         "2025-03-12": "Mission Team from the UK",
         "2025-03-13": "Mission Team from the UK",
         "2025-03-14": "Mission Team from the UK",
         "2025-03-15": "Mission Team from the UK",
-        "2025-07-04": "Independence Day Celebration",
-        "2025-12-25": "Christmas Gathering"
+        "2025-04-10": "Shepherd's Symposium",
+        "2025-04-11": "Shepherd's Symposium",
+        "2025-04-12": "Shepherd's Symposium",
+        "2025-04-13": "Shepherd's Symposium",
+
+        "2025-08-14": "Deborah Conference",
+        "2025-08-15": "Deborah Conference",
+        "2025-08-16": "Deborah Conference",
+        "2025-08-17": "Deborah Conference",
+       
     };
 
     let today = new Date();
