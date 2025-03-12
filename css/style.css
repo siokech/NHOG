@@ -2666,25 +2666,32 @@ a.btn.blue,
     color: white;
     position: relative;
     cursor: pointer;
+    align-items: center;
 }
 .event-day:hover {
     background-color: #4a6ba9 !important;
     
 }
 
+
+
+
 .event-tooltip {
-    background-color: #243452; /* Background color for the tooltip */
-    color: white !important; /* Ensure text is white */
-    padding: 5px 10px;
+    background-color: #243452;
+    color: white !important;
+    padding: 10px;
     border-radius: 5px;
-    font-size: 20px;
+    font-size: 15px;
     position: absolute;
+    bottom: 120%;
+    left: 50%;
+    transform: translateX(-60%);
     z-index: 10;
-    white-space: nowrap;
+    white-space: normal;
+    width: 200px;
+    text-align: center;
+    
 }
-
-
-
 
 
 
