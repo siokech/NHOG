@@ -145,4 +145,8 @@ transition:.2s linear;
     .founder {
         width: 90%; /* Make each founder take the full width */
     }
+
+    .about-us{
+        margin-top: 10%;
+    }
 }
