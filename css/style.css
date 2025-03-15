@@ -374,7 +374,7 @@ a:hover {
     border-bottom: 3px solid #ddd;
     z-index: 1000;
     transition: top 0.3s ease-in-out;
-    background-color: #8a5aa5; /* Ensure background remains solid */
+   background: linear-gradient(to right, #2e2a2c, #8a5aa5, #a23054);
 
 
 }
@@ -2085,6 +2085,18 @@ a.btn.blue,
 	}
 	
 }
+.donate-button {
+    background-color: #8a5aa5;
+    color: white;
+    padding: 12px 27px;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: 0.3s;
+    display: inline-block;
+
+}
 
 
 
@@ -2245,9 +2257,22 @@ a.btn.blue,
 
 
 @media screen and (max-width: 768px) {
-	
+	.animated-title2{
+line-height: 2.5rem;
+	}
 
+.donate-button {
+    background-color: #8a5aa5;
+    color: white;
+    padding: 12px 27px;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: 0.3s;
+    display: inline-block;
 
+}
 .news .pics {
     width: 100%; /* Full width */
     display: flex;
