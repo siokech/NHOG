@@ -75,7 +75,7 @@
 
         h2 {
             color: #8a5aa5;
-            margin-bottom: 10px;
+            margin-bottom: -15px;
         }
 
         .details {
@@ -116,10 +116,9 @@
 .order-of-service {
     position: relative;
     width: 100%;
-    padding: 60px 3px;
+    padding: 3px 3px;
     color: white;
     text-align: left; /* Align text to the left */
-    margin-bottom: 40px;
     background: url('images/kenministries.jpg') no-repeat center center/cover;
     height: 35rem;
     display: flex;
@@ -166,7 +165,6 @@
 @media (max-width: 1024px) {
     .order-of-service {
         height: 35rem;
-        padding: 40px 10px;
         background-size: contain; /* Adjust background for medium screens */
         background-position: center center;
     }
@@ -181,13 +179,10 @@
 }
 
 @media (max-width: 768px) {
-    .order-of-service {
-        height: 23rem;
-        padding: 10px 10px;
-        background-size: contain; /* Prevents image from being cut off */
-        background-position: center center;
-
-    }
+     .order-of-service{
+        height: 29rem !important;
+        width: 100% !important;
+     }
 
     .order-of-service h1 {
         font-size: 1.2rem;
@@ -197,24 +192,13 @@
         font-size: 1rem;
     }
 
-    .order-text {
-    position: absolute;
-    left: 5%; /* Moves text to the left */
-    color: white;
-    font-size: 1.2rem;
-    font-weight: bold;
-    max-width: 40%; /* Adjusts text width */
-    text-transform: none !important;
-}
-
 }
 
 @media (max-width: 480px) {
     .order-of-service {
         height: 25rem;
         padding: 20px 5px;
-        background-size: contain; /* Ensures full image is visible */
-        background-position: center center;
+       
     }
 
     .order-of-service h1 {
@@ -223,6 +207,25 @@
 
     .order-of-service p {
         font-size: 0.9rem;
+    }
+}
+
+/* Adjust for tablets */
+@media (max-width: 768px) {
+    .order-text {
+        left: 3%;
+        font-size: clamp(1rem, 2vw, 1.5rem);
+        max-width: 85%;
+    }
+}
+
+/* Adjust for mobile screens */
+@media (max-width: 480px) {
+    .order-text {
+        left: 2%;
+        font-size: clamp(0.9rem, 2vw, 1.2rem);
+        max-width: 80%;
+        text-align: center; /* Centers text on smaller screens */
     }
 }
 
@@ -448,7 +451,7 @@
     </header>
     <!-- / header -->   
     <div class="containerr">
-         <h1 style="text-align: center; margin-top:7%;">Our Church Ministries</h1>
+         <h2 style="text-align: center; margin-top:7%;">Our Church Ministries</h2>
 <section class="order-of-service">
     <div class="content">
         <h2 class="order-text" style="text-transform: none !important;">Everyone Gets a Place to Serve at New House of Grace International. Come expecting to receive grace to serve the living God. </h2>
@@ -456,7 +459,6 @@
 </section>
 
         <div class="service">
-
 
             <img src="images/women.jpg" alt="Women Ministry">
             <div class="text">
