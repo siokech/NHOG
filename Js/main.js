@@ -37,7 +37,8 @@ $(document).ready(function() {
     });
 
     const events = {
-        
+        "2025-02-24": "Scholarship Program",
+        "2025-02-25": "Scholarship Program",
         "2025-03-11": "Mission Team from the UK",
         "2025-03-12": "Mission Team from the UK",
         "2025-03-13": "Mission Team from the UK",
@@ -48,10 +49,7 @@ $(document).ready(function() {
         "2025-04-12": "Shepherd's Symposium",
         "2025-04-13": "Shepherd's Symposium",
 
-        "2025-08-14": "Deborah Conference",
-        "2025-08-15": "Deborah Conference",
-        "2025-08-16": "Deborah Conference",
-        "2025-08-17": "Deborah Conference",
+        
        
     };
 
@@ -351,12 +349,9 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
-// Wait for the page to load fully before displaying content
-document.addEventListener("DOMContentLoaded", function() {
-    document.body.classList.add("loaded");
-});
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
+    // Hide preloader after page fully loads
     setTimeout(() => {
         document.body.classList.add("loaded");
-    }, 500); // Delay to allow a smooth transition
+    }, 500); // Adjust delay if needed
 });
