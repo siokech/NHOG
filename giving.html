@@ -142,6 +142,28 @@
             height: 30px;
         }
 
+        .mpesa {
+    max-width: 100%;  /* Ensures image scales with the container */
+    height: auto;     /* Maintains aspect ratio */
+    display: block;   /* Removes extra spacing issues */
+    margin: 0 auto;   /* Centers the logo */
+
+}
+
+/* Adjust size for smaller screens */
+@media (max-width: 768px) { 
+    .mpesa {
+        height: 10rem; /* Reduce size on tablets */
+    }
+}
+
+@media (max-width: 480px) { 
+    .mpesa {
+        height: 7rem; /* Reduce size further on mobile */
+    }
+}
+
+
     </style>
 </head>
 <body>
@@ -168,7 +190,7 @@
 
 
     <header id="header"> 
-        <div class="container" style="background-color: #8a5aa5;width:100%;">
+        <div class="container" style="background: linear-gradient(to right, #2e2a2c, #8a5aa5, #a23054);width:100%;">
             <a href="index.html" id="logo" title="NHOG">NHOG</a>
             <div class="menu-trigger"></div>
             <nav id="menu">
@@ -230,7 +252,7 @@
 
         <!-- Donation Form -->
         <div class="donation-form">
-       <img src="images/M-PESA_LOGO.png" alt="M-PESA" style="height: 14rem; vertical-align: middle;margin-bottom: -30px;">
+       <img src="images/M-PESA_LOGO.png" class="mpesa" alt="M-PESA" style="height: 14rem; vertical-align: middle;margin-bottom: -30px;">
 
             <p style="margin-top:1px;">Enter your phone number and amount. You will receive an M-Pesa prompt.</p>
 
