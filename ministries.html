@@ -120,7 +120,8 @@
     color: white;
     text-align: left; /* Align text to the left */
     background: url('images/kenministries.jpg') no-repeat center center/cover;
-    height: 35rem;
+    min-height: 35rem;
+    height: auto;
     display: flex;
     align-items: center; /* Vertically center text */
     text-transform: none; /* Ensures sentence case */
@@ -164,7 +165,8 @@
 }
 @media (max-width: 1024px) {
     .order-of-service {
-        height: 35rem;
+        min-height: 35rem;
+    height: auto;
         background-size: contain; /* Adjust background for medium screens */
         background-position: center center;
     }
@@ -180,8 +182,9 @@
 
 @media (max-width: 768px) {
      .order-of-service{
-        height: 29rem !important;
-        width: 100% !important;
+              min-height: 12rem !important;
+        height: 20rem !important;
+        width: auto !important;
      }
 
     .order-of-service h1 {
