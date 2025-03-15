@@ -59,10 +59,24 @@
     background-color: #dabae8; /* New refined purple */
     color: white;}
 
-        .service img {
-            width: 50%;
-            border-radius: 10px;
-        }
+       .service img {
+    width: 100%; /* Make it take full width of its container */
+    max-width: 50%; /* Prevent it from exceeding 50% width on larger screens */
+    border-radius: 10px;
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Remove extra spacing caused by inline elements */
+    margin: 0 auto; /* Center the image */
+}
+
+/* Adjust for smaller screens */
+@media screen and (max-width: 768px) {
+    .service img {
+        max-width: 100%; /* Increase width for better visibility */
+        height: auto; /* Keep aspect ratio */
+        margin-top: 10px; /* Reduce top margin */
+        margin-bottom: 6px; /* Reduce bottom margin */
+    }
+}
 
         .service .text {
             width: 55%;
@@ -104,7 +118,7 @@
 
             .service img {
                 width: 100%;
-                margin-bottom: 15px;
+                margin-bottom: 3px;
             }
 
             .service .text {
@@ -113,15 +127,10 @@
             }
         }
 
-.order-of-service {
+.sunday {
     width: 100%;
-    padding: 60px 3px;
-    color: white;
-    text-align: center;
-   
-    margin-bottom: 40px;
-    background: url('images/sunday_service.jpg') no-repeat center center/cover;
-    height:40rem;
+    margin-bottom: 4px;
+    height:auto;
 }
 
 .order-of-service h1 {
@@ -251,11 +260,8 @@
     <!-- / header -->   
     <div class="containerr">
        
-<section class="order-of-service">
-    <div class="content">
-        
-    </div>
-</section>
+      <img src="images/sunday_service.jpg" class="sunday" alt="Breakthrough Hour">
+
 
         <div class="service">
             <img src="images/prayer.jpg" alt="Breakthrough Hour">
