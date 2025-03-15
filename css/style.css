@@ -374,9 +374,7 @@ a:hover {
     border-bottom: 3px solid #ddd;
     z-index: 1000;
     transition: top 0.3s ease-in-out;
-   background: linear-gradient(to right, #2e2a2c, #8a5aa5, #a23054);
-
-
+    background: linear-gradient(to right, #2e2a2c, #8a5aa5, #a23054);
 }
 
 
@@ -2257,7 +2255,14 @@ a.btn.blue,
 
 
 @media screen and (max-width: 768px) {
-	.animated-title2{
+	#header {
+	
+    background: linear-gradient(to right, #8a5aa5,#f6edf2 #a23054);
+}
+.cont{
+	 background: linear-gradient(to right, #8a5aa5,#f6edf2 #a23054);
+}
+.animated-title2{
 line-height: 2.5rem;
 	}
 
