@@ -2262,16 +2262,7 @@ line-height: 2.5rem;
 	}
 
 .donate-button {
-    background-color: #8a5aa5;
-    color: white;
-    padding: 12px 27px;
-    font-size: 14px;
-    font-weight: bold;
-    border-radius: 10px;
-    text-decoration: none;
-    transition: 0.3s;
-    display: inline-block;
-
+    margin-top: 1.3rem;
 }
 .news .pics {
     width: 100%; /* Full width */
