@@ -131,6 +131,9 @@ transition:.2s linear;
 }
 
 @media (max-width: 768px) {
+    .email{
+        display: none;
+    }
     .image-gallery img {
         width: 95%;
         height: auto;
