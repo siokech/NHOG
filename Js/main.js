@@ -355,3 +355,31 @@ document.addEventListener("DOMContentLoaded", function () {
         document.body.classList.add("loaded");
     }, 500); // Adjust delay if needed
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+    const popup = document.getElementById("symposium-popup");
+    const closePopup = document.querySelector(".close-popup");
+
+    // Initially position the popup off-screen to the left
+    popup.style.transform = "translateX(-100%)";
+    popup.style.opacity = "0"; // Make it invisible at first
+
+    // Delay popup appearance for 10 seconds
+    setTimeout(function () {
+        popup.style.display = "flex"; // Show popup
+        setTimeout(() => {
+            popup.style.transform = "translateX(0)"; // Slide it in
+            popup.style.opacity = "1"; // Fade it in smoothly
+        }, 100); // Small delay to allow display change
+    }, 10000);
+
+    // Close the popup when the close button is clicked
+    closePopup.addEventListener("click", function () {
+        popup.style.transform = "translateX(-100%)"; // Slide it out
+        popup.style.opacity = "0"; // Fade it out
+        setTimeout(() => {
+            popup.style.display = "none"; // Hide completely after animation
+        }, 500);
+    });
+});
+
