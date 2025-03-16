@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deborah Ministry</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css">
+
+
+
+    <style>
+        /* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    text-align: center;
+     padding-top: 70px; /* Adjust based on navbar height */
+
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    width: 100%;
+    height: 80vh;
+    background: url('images/deborah1.jpg') no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+}
+
+.hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.hero-text {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin: 0;
+}
+
+.hero p {
+    font-size: 1.5rem;
+    margin: 10px 0;
+}
+
+/* About Section */
+.about {
+    padding: 50px 20px;
+    background: white;
+    text-align: center;
+}
+
+.about h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.about p {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Slider Section */
+.slider-container {
+    padding: 50px 20px;
+    background: #eee;
+}
+
+.slider .slick-slide {
+    margin: 0 10px; /* Adds spacing between images */
+}
+
+.slider img {
+    width: 100%;
+    height: 300px; /* Ensures uniform height */
+    object-fit: cover; /* Keeps aspect ratio while covering space */
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out; /* Smooth expand animation */
+    cursor: pointer;
+}
+
+/* Adjusts the spacing between slider dots */
+.slick-dots {
+    margin-top: 10px !important;
+}
+
+/* Ensures the slides don’t get cut off */
+.slick-list {
+    padding: 10px 0 !important;
+}
+
+/* Enlarged Image */
+.slider img.full-screen {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1.5); /* Enlarges image */
+    width: auto;
+    max-width: 90%;
+    max-height: 90%;
+    z-index: 1000;
+    border-radius: 0;
+}
+
+/* Dark overlay when image is clicked */
+.image-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 999;
+    display: none;
+}
+
+
+/* Donation Section */
+.donate {
+    padding: 50px 20px;
+    background: #d9534f;
+    color: white;
+}
+
+.donate h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.donate p {
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 0 auto 20px;
+}
+
+.donate-btn {
+    background: white;
+    color: #d9534f;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.donate-btn:hover {
+    background: #c9302c;
+    color: white;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(to right, #2e2a2c, #8a5aa5, #a23054);
+    padding: 15px 20px;
+    color: white;
+    position: fixed; /* Change from relative to fixed */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* Ensures navbar stays above other content */
+    padding-right: 20px;
+}
+    .logo {
+        font-size: 1.5rem;
+        font-weight: bold;
+    }
+
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 10px; /* Adds spacing between menu items */
+    margin-right: 30px;
+    padding: 0;
+}
+    .nav-links li {
+        margin: 0 15px;
+    }
+
+    .nav-links li a {
+        color: white;
+        text-decoration: none;
+        font-size: 1rem;
+    }
+
+    .nav-links li a:hover {
+        text-decoration: underline;
+    }
+
+    .menu-toggle {
+        display: none;
+        font-size: 1.5rem;
+        cursor: pointer;
+    }
+
+   @media screen and (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.8);
+        text-align: center;
+        padding: 10px 0;
+    }
+
+ .nav-links.show {
+    display: flex !important;
+}
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+
+    }
+
+     .inquiry {
+    padding: 50px 5%;
+    background: #fff;
+    text-align: center;
+}
+
+.inquiry h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.inquiry form {
+    max-width: 500px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.inquiry input,
+.inquiry textarea {
+    width: 100%;
+    padding: 12px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.inquiry textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.inquiry button {
+    background: #d9534f;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+}
+
+.inquiry button:hover {
+    background: #c9302c;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .inquiry h2 {
+        font-size: 1.8rem;
+    }
+
+    .inquiry form {
+        width: 90%;
+    }
+}
+
+@media (max-width: 480px) {
+    .inquiry h2 {
+        font-size: 1.5rem;
+    }
+
+    .inquiry input,
+    .inquiry textarea {
+        font-size: 0.9rem;
+        padding: 10px;
+    }
+
+    .inquiry button {
+        font-size: 1rem;
+        padding: 10px;
+    }
+}
+
+/* Popup Background */
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+/* Popup Content */
+.popup-content {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    text-align: center;
+    width: 95%;
+    max-width: 500px;
+    max-height: 85vh;
+    overflow-y: auto;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Popup Title */
+.popup-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* Subtitle */
+.popup-subtitle {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+/* Close Icon */
+.close-popup {
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #666;
+}
+
+.close-popup:hover {
+    color: red;
+}
+
+/* Payment Section */
+.donation-method {
+    padding: 15px 0;
+    text-align: center;
+}
+
+/* Payment Logos */
+.payment-logo {
+    width: 150px;
+    margin: 10px 0;
+}
+
+/* Divider */
+.divider {
+    border: none;
+    height: 1px;
+    background: #ddd;
+    margin: 15px 0;
+}
+
+/* Payment Link */
+.payment-link {
+    color: #0070ba;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.payment-link:hover {
+    text-decoration: underline;
+}
+
+/* Close Button */
+.close-popup-btn {
+    background: #0070ba;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+.close-popup-btn:hover {
+    background: #005c99;
+}
+
+  .whatsapp-float {
+            position: fixed;
+            bottom: 80px;
+            right: 20px;
+            background: #25D366;
+            color: white;
+            padding: 10px;
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            text-decoration: none;
+            font-weight: bold;
+            transition: transform 0.3s ease;
+
+        }
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            
+            color: white;
+        }
+        .whatsapp-float img {
+            width: 30px;
+            height: 30px;
+        }
+
+
+</style>
+
+
+</head>
+<body>
+
+
+ <nav class="navbar">
+    <div class="logo"><a href="index.html" style="color:white; text-decoration: none;">Deborah</a></div>
+    <div class="menu-toggle" onclick="toggleMenu()">&#9776;</div>
+    <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="ministries.html">Ministries</a></li>
+        <li><a href="giving.html">Giving</a></li>
+        <li><a href="contacting.html">Contact Us</a></li>
+    </ul>
+</nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <img src="images/deborah1.jpg" alt="Deborah Ministry" class="hero-image">
+        <div class="hero-text">
+            <h1>Deborah Ministry</h1>
+            <p>Bringing hope and love to widows, orphans, and the less privileged.</p>
+        </div>
+    </section>
+
+    <!-- About Deborah Ministry -->
+    <section class="about">
+        <h2>Who We Are</h2>
+        <p>The Deborah Ministry is dedicated to supporting widows, orphans, and those in need within our community. Through love, care, and generosity, we extend a helping hand to uplift lives and restore hope.</p>
+    </section>
+
+    <!-- Image Slider -->
+    <section class="slider-container">
+        <div class="slider">
+            <img src="images/deborah2.jpg" alt="Ministry Work">
+            <img src="images/deborah3.jpg" alt="Helping Hands">
+            <img src="images/deborah4.jpg" alt="Support for the Needy">
+            <img src="images/deborah5.jpg" alt="Community Outreach">
+            <img src="images/deborah6.jpg" alt="Love in Action">
+            <img src="images/deborah7.jpg" alt="Orphan Support">
+            <img src="images/deborah8.jpg" alt="Feeding Program">
+            <img src="images/deborah9.jpg" alt="Education for All">
+            <img src="images/deborah10.jpg" alt="Empowering Women">
+        </div>
+    </section>
+
+    <!-- Donation Section -->
+    <section class="donate">
+        <h2>Support Deborah Ministry</h2>
+        <p>Your donation can make a difference! You can contribute money, food, clothes, or other support to help us continue our mission.</p>
+        <button class="donate-btn">Donate Now</button>
+    </section>
+
+     <section class="inquiry">
+        <h2>Inquire About Our Ministry</h2>
+        <p>If you’d like to learn more, feel free to reach out.</p>
+        <form action="mailto:info@nhog.org" method="post" enctype="text/plain">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" placeholder="Your Inquiry" rows="4" required></textarea>
+            <button type="submit">Send Inquiry</button>
+        </form>
+    </section>
+
+
+
+        <!-- Footer Section -->
+    <footer style="background: #222; color: white; text-align: center; padding: 25px; font-size: 14px; opacity:.8;">
+        Copyright © 2025 GBN Media - New House of Grace Church. All rights reserved.
+    </footer>
+   
+<!-- Donation Popup -->
+<!-- Donation Popup -->
+<div id="donation-popup" class="popup">
+    <div class="popup-content">
+        <span class="close-popup">&times;</span>
+        <h2 class="popup-title">Support Deborah Ministry</h2>
+        <p class="popup-subtitle">Your donation can make a difference! Choose a payment method below:</p>
+
+        <!-- M-PESA -->
+        <div class="donation-method">
+            <img src="images/M-PESA_LOGO.png" alt="M-Pesa" class="payment-logo">
+            <p><strong>M-Pesa Paybill:</strong> 247247</p>
+            <p><strong>Account No:</strong> 795288955</p>
+        </div>
+        <hr class="divider">
+
+        <!-- PayPal -->
+        <div class="donation-method">
+            <img src="images/paypal.png" alt="PayPal" class="payment-logo">
+            <p><strong>PayPal:</strong> <a href="mailto:info@nhog.org" class="payment-link">info@nhog.org</a></p>
+        </div>
+        <hr class="divider">
+
+        <!-- Equity Bank -->
+        <div class="donation-method">
+            <img src="images/equity.png" alt="Equity Bank" class="payment-logo">
+            <p><strong>Equity Bank Account:</strong> 100789675478945</p>
+            <p><strong>Account Name:</strong> New House of Grace</p>
+        </div>
+        <hr class="divider">
+
+        <!-- Cooperative Bank -->
+        <div class="donation-method">
+            <img src="images/coop.jpg" alt="Cooperative Bank" class="payment-logo">
+            <p><strong>Cooperative Bank Account:</strong> 03354946549956</p>
+            <p><strong>Account Name:</strong> New House of Grace</p>
+        </div>
+
+        <!-- Close Button -->
+        <button class="close-popup-btn">Close</button>
+    </div>
+</div>
+ <a href="https://wa.me/254725522186" class="whatsapp-float" target="_blank" style="color:white;">
+        <img src="images/whatsapp.png" alt="WhatsApp">
+        Chat with us
+    </a>
+
+ 
+</body>
+<script>
+   $(document).ready(function () {
+    $(".menu-toggle").click(function () {
+        $(".nav-links").toggleClass("show");
+    });
+});
+
+        $(document).ready(function(){
+            $('.slider').slick({
+                autoplay: true,
+                autoplaySpeed: 2000,
+                dots: true,
+                arrows: false,
+                infinite: true,
+                slidesToShow: 3,
+                slidesToScroll: 1,
+                responsive: [
+                    { breakpoint: 768, settings: { slidesToShow: 1 } }
+                ]
+            });
+        });
+        $(document).ready(function(){
+    let slider = $('.slider');
+
+    // Initialize Slick Slider
+    slider.slick({
+        autoplay: true,
+        autoplaySpeed: 2000,
+        dots: true,
+        arrows: false,
+        infinite: true,
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        responsive: [
+            { breakpoint: 768, settings: { slidesToShow: 1 } }
+        ]
+    });
+
+    // Click to Expand Image
+    $('.slider img').on('click', function() {
+        let img = $(this);
+        
+        if (!img.hasClass('full-screen')) {
+            img.addClass('full-screen');
+            $('.image-overlay').fadeIn();
+            slider.slick('slickPause'); // Pause slider
+        } else {
+            img.removeClass('full-screen');
+            $('.image-overlay').fadeOut();
+            slider.slick('slickPlay'); // Resume slider
+        }
+    });
+
+    // Close image if overlay is clicked
+    $('.image-overlay').on('click', function() {
+        $('.slider img.full-screen').removeClass('full-screen');
+        $(this).fadeOut();
+        slider.slick('slickPlay');
+    });
+});
+
+     document.addEventListener("DOMContentLoaded", function() {
+    const donateBtn = document.querySelector(".donate-btn");
+    const popup = document.getElementById("donation-popup");
+    const closePopup = document.querySelector(".close-popup");
+    const closePopupBtn = document.querySelector(".close-popup-btn");
+
+    donateBtn.addEventListener("click", function() {
+        popup.style.display = "flex";
+    });
+
+    closePopup.addEventListener("click", function() {
+        popup.style.display = "none";
+    });
+
+    closePopupBtn.addEventListener("click", function() {
+        popup.style.display = "none";
+    });
+
+    // Close popup when clicking outside the box
+    window.addEventListener("click", function(event) {
+        if (event.target === popup) {
+            popup.style.display = "none";
+        }
+    });
+});
+
+
+    </script>
+</html>

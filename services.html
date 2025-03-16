@@ -10,10 +10,8 @@
 
     <script defer src="script.js"></script>
 
-     <link
-      href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css"
-      rel="stylesheet"
-    />
+     <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css"
+      rel="stylesheet"/>
  <link rel="icon" type="image/x-icon" href="images/favicon.ico">
  <!-- Font Awesome CDN -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -40,7 +38,7 @@
             color: #8a5aa5;
             margin-bottom: 20px;
         }
-        .service {
+    .service {
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -51,22 +49,23 @@
             border-radius: 10px;
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s, box-shadow 0.3s;
-}
+        }
 
-        .service:hover {
-    transform: scale(1.02);
-    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
-    background-color: #dabae8; /* New refined purple */
-    color: white;}
+    .service:hover {
+        transform: scale(1.02);
+        box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+        background-color: #dabae8; /* New refined purple */
+        color: white;
+    }
 
-       .service img {
-    width: 100%; /* Make it take full width of its container */
-    max-width: 50%; /* Prevent it from exceeding 50% width on larger screens */
-    border-radius: 10px;
-    height: auto; /* Maintain aspect ratio */
-    display: block; /* Remove extra spacing caused by inline elements */
-    margin: 0 auto; /* Center the image */
-}
+    .service img {
+        width: 100%; /* Make it take full width of its container */
+        max-width: 50%; /* Prevent it from exceeding 50% width on larger screens */
+        border-radius: 10px;
+        height: auto; /* Maintain aspect ratio */
+        display: block; /* Remove extra spacing caused by inline elements */
+        margin: 0 auto; /* Center the image */
+    }
 
 /* Adjust for smaller screens */
 @media screen and (max-width: 768px) {

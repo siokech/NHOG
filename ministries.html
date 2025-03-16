@@ -6,7 +6,7 @@
     <title>Order of Service - NHOG</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
      <link rel="stylesheet" media="all" href="css/style.css">
-  <link rel="stylesheet" media="all" href="css/about-us.css">
+     <link rel="stylesheet" media="all" href="css/about-us.css">
 
     <script defer src="script.js"></script>
 
@@ -17,6 +17,24 @@
  <link rel="icon" type="image/x-icon" href="images/favicon.ico">
  <!-- Font Awesome CDN -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+ <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            setTimeout(() => {
+                document.getElementById("popup").classList.add("show");
+            }, 3000); // Show popup after 3 seconds
+        });
+
+        function closePopup() {
+            document.getElementById("popup").classList.remove("show");
+            document.getElementById("popup-notification").style.display = "block";
+        }
+
+        function showPopup() {
+            document.getElementById("popup").classList.add("show");
+            document.getElementById("popup-notification").style.display = "none";
+        }
+    </script>
     <style>
         * {
             margin: 0;
@@ -51,13 +69,11 @@
             border-radius: 10px;
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s, box-shadow 0.3s;
-}
+        }
 
-        .service:hover {
-    transform: scale(1.02);
-    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
- 
-    }
+    .service:hover {
+        transform: scale(1.02);
+        box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);}
 
         .service img {
             width: 50%;
@@ -402,6 +418,93 @@
     }
 }
 
+/* Pop-up Styling */
+        .popup {
+            position: fixed;
+            bottom: 20px;
+            right: -350px; /* Start off-screen */
+            background: #fff;
+            color: #333;
+            padding: 20px;
+            width: 280px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            border-radius: 8px;
+            z-index: 1000;
+            display: block;
+            transition: right 0.5s ease-in-out;
+        }
+        .popup.show {
+            right: 20px; /* Slide in */
+            animation: shake 1.5s infinite;
+        }
+        .popup button {
+            background: none;
+            border: none;
+            font-size: 1.2rem;
+            cursor: pointer;
+            float: right;
+            color: red;
+        }
+
+        /* Beautify Pop-up Text */
+        .popup-content {
+            font-size: 1rem;
+            color: #555;
+            line-height: 1.5;
+        }
+        .popup-content strong {
+            color: #007bff;
+            font-size: 1.1rem;
+        }
+        .popup-content a {
+            display: inline-block;
+            margin-top: 8px;
+            padding: 8px 12px;
+            background: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+        .popup-content a:hover {
+            background: #0056b3;
+        }
+
+        /* Persistent Notification */
+        .popup-notification {
+            position: fixed;
+            bottom: 10px;
+            right: 20px;
+            background: #007bff;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 8px;
+            cursor: pointer;
+            display: none;
+            font-size: 0.9rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Shake Animation */
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-3px); }
+            50% { transform: translateX(3px); }
+            75% { transform: translateX(-3px); }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            .popup {
+                width: 90%;
+                right: -100%;
+            }
+            .popup.show {
+                right: 5%;
+            }
+        }
+
     </style>
 </head>
 <body>
@@ -446,7 +549,25 @@
         <!-- / container -->
     
     </header>
-    <!-- / header -->   
+    <!-- / header -->  
+<!-- Pop-up Notification -->
+    <div id="popup" class="popup">
+        <p class="popup-content">
+            <strong>💖 Support Widows & Orphans!</strong><br>
+            Deborah Ministry is dedicated to uplifting widows, orphans, and those in need.<br>
+            <a href="debora.html" target="_blank">Visit Us</a>
+        </p>
+        <button onclick="closePopup()">✖</button>
+    </div>
+
+    <!-- Floating Notification Button -->
+    <div id="popup-notification" class="popup-notification" onclick="showPopup()">
+        New Update: Deborah Ministry 💙
+    </div>
+
+
+
+
     <div class="containerr">
          <h2 style="text-align: center; margin-top:7%;">Our Church Ministries</h2>
 <section class="order-of-service">
@@ -741,4 +862,21 @@ Apostle Ken and Rev. Judy Baraza are the chief patrons with the head of marrieds
     <script src="Js/main.js"></script>
      <script src="Js/count.js"></script>
 </body>
+<script>
+        document.addEventListener("DOMContentLoaded", function () {
+            setTimeout(() => {
+                document.getElementById("popup").classList.add("show");
+            }, 3000); // Show popup after 3 seconds
+        });
+
+        function closePopup() {
+            document.getElementById("popup").classList.remove("show");
+            document.getElementById("popup-notification").style.display = "block";
+        }
+
+        function showPopup() {
+            document.getElementById("popup").classList.add("show");
+            document.getElementById("popup-notification").style.display = "none";
+        }
+    </script>
 </html>
